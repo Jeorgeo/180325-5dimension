@@ -102,8 +102,8 @@ add_action( 'after_setup_theme', 'dinelli_setup' );
  		'name'          => esc_html__( 'mail', 'dinelli' ),
  		'id'            => 'mail',
  		'description'   => esc_html__( 'Add widgets here.', 'dinelli' ),
- 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
- 		'after_widget'  => '</div>',
+ 		'before_widget' => '<li>',
+ 		'after_widget'  => '</li>',
  		'before_title'  => '<h2 class="widget-title">',
  		'after_title'   => '</h2>',
  	) );
@@ -111,8 +111,8 @@ add_action( 'after_setup_theme', 'dinelli_setup' );
  		'name'          => esc_html__( 'phone-top', 'dinelli' ),
  		'id'            => 'phone',
  		'description'   => esc_html__( 'Add widgets here.', 'dinelli' ),
- 		'before_widget' => '<div id="%1$s" class="widget phone">',
- 		'after_widget'  => '</div>',
+ 		'before_widget' => '<li>',
+ 		'after_widget'  => '</li>',
  		'before_title'  => '<h2 class="widget-title">',
  		'after_title'   => '</h2>',
  	) );
@@ -120,15 +120,15 @@ add_action( 'after_setup_theme', 'dinelli_setup' );
  		'name'          => esc_html__( 'phone-bottom', 'dinelli' ),
  		'id'            => 'phone_b',
  		'description'   => esc_html__( 'Add widgets here.', 'dinelli' ),
- 		'before_widget' => '<div id="%1$s" class="widget phone">',
- 		'after_widget'  => '</div>',
+ 		'before_widget' => '<li>',
+ 		'after_widget'  => '</li>',
  		'before_title'  => '<h2 class="widget-title">',
  		'after_title'   => '</h2>',
  	) );
  	register_sidebar( array(
- 		'name'          => esc_html__( 'social_vk', 'dinelli' ),
+ 		'name'          => esc_html__( 'ссылка на группу vk', 'dinelli' ),
  		'id'            => 'social_vk',
- 		'description'   => esc_html__( 'Add widgets here. <a href="#" class="social_vk" target="_blanck">
+ 		'description'   => esc_html__( '<a href="#" class="social_vk" target="_blanck">
 		</a>', 'dinelli' ),
  		'before_widget' => '<div id="%1$s" class="widget %2$s">',
  		'after_widget'  => '</div>',
@@ -136,9 +136,9 @@ add_action( 'after_setup_theme', 'dinelli_setup' );
  		'after_title'   => '</h2>',
  	) );
  	register_sidebar( array(
- 		'name'          => esc_html__( 'social_f', 'dinelli' ),
- 		'id'            => 'social_f',
- 		'description'   => esc_html__( 'Add widgets here.<a href="#" class="social_f" target="_blanck">
+ 		'name'          => esc_html__( 'ссылка на канал telegram', 'dinelli' ),
+ 		'id'            => 'social_t',
+ 		'description'   => esc_html__( '<a href="#" class="social_t" target="_blanck">
 		</a>', 'dinelli' ),
  		'before_widget' => '<div id="%1$s" class="widget %2$s">',
  		'after_widget'  => '</div>',
@@ -146,9 +146,9 @@ add_action( 'after_setup_theme', 'dinelli_setup' );
  		'after_title'   => '</h2>',
  	) );
  	register_sidebar( array(
- 		'name'          => esc_html__( 'social_youtube', 'dinelli' ),
+ 		'name'          => esc_html__( 'ссылка на канал youtube', 'dinelli' ),
  		'id'            => 'social_youtube',
- 		'description'   => esc_html__( 'Add widgets here.<a href="#" class="social_yt" target="_blanck">
+ 		'description'   => esc_html__( '<a href="#" class="social_yt" target="_blanck">
 		</a>', 'dinelli' ),
  		'before_widget' => '<div id="%1$s" class="widget %2$s">',
  		'after_widget'  => '</div>',
@@ -156,9 +156,19 @@ add_action( 'after_setup_theme', 'dinelli_setup' );
  		'after_title'   => '</h2>',
  	) );
  	register_sidebar( array(
- 		'name'          => esc_html__( 'social_instagram', 'dinelli' ),
+ 		'name'          => esc_html__( 'ссылка на instagram', 'dinelli' ),
  		'id'            => 'social_instagram',
- 		'description'   => esc_html__( 'Add widgets here.<a href="#" class="social_in" target="_blanck">
+ 		'description'   => esc_html__( '<a href="#" class="social_in" target="_blanck">
+		</a>', 'dinelli' ),
+ 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+ 		'after_widget'  => '</div>',
+ 		'before_title'  => '<h2 class="widget-title">',
+ 		'after_title'   => '</h2>',
+ 	) );
+	register_sidebar( array(
+ 		'name'          => esc_html__( 'ссылка на группу f', 'dinelli' ),
+ 		'id'            => 'social_f',
+ 		'description'   => esc_html__( '<a href="#" class="social_f" target="_blanck">
 		</a>', 'dinelli' ),
  		'before_widget' => '<div id="%1$s" class="widget %2$s">',
  		'after_widget'  => '</div>',
@@ -171,15 +181,6 @@ add_action( 'after_setup_theme', 'dinelli_setup' );
  		'description'   => esc_html__( 'Add events here.', 'dinelli' ),
  		'before_widget' => '<div id="%1$s" class="widget %2$s">',
  		'after_widget'  => '</div>',
- 		'before_title'  => '<h2 class="widget-title">',
- 		'after_title'   => '</h2>',
- 	) );
-	register_sidebar( array(
- 		'name'          => esc_html__( 'Сертификат яндекса', 'dinelli' ),
- 		'id'            => 'yd_icon',
- 		'description'   => esc_html__( 'Вставте картинку со ссылкой', 'dinelli' ),
- 		'before_widget' => '<li>',
- 		'after_widget'  => '</li>',
  		'before_title'  => '<h2 class="widget-title">',
  		'after_title'   => '</h2>',
  	) );

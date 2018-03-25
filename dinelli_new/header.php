@@ -43,13 +43,13 @@
 			<div class="sidebar-delim"></div><!-- #линия-разделитель -->
 			<div class="left-panel__contacts">
 				<ul class="sidebar-contacts">
-					<li><?php dynamic_sidebar( 'mail' ); ?></li>
-					<li><?php dynamic_sidebar( 'phone' ); ?></li>
-					<li><?php dynamic_sidebar( 'phone_b' ); ?></li>
+					<?php dynamic_sidebar( 'mail' ); ?>
+					<?php dynamic_sidebar( 'phone' ); ?>
+					<?php dynamic_sidebar( 'phone_b' ); ?>
 					<li>
 						<a href="#" id="js_modal" onclick="showPopup()" class="show_modal">
 							<span class="color-text">[ </span>
-							Заказать звонок
+							Дикша Любви
 							<span class="color-text"> ]</span>
 						</a>
 						<a href="#" id="js_modal" onclick="showPopupR()" class="show_modal">
@@ -59,22 +59,18 @@
 						</a>
 					</li>
 				</ul>
-				<ul class="sidebar-social clearfix">
-					<li><?php dynamic_sidebar( 'social_vk' ); ?></a></li>
-					<li><?php dynamic_sidebar( 'social_f' ); ?></a></li>
-					<li><?php dynamic_sidebar( 'social_youtube' ); ?></a></li>
-					<li><?php dynamic_sidebar( 'social_instagram' ); ?></a></li>
-				</ul>
+
 			</div>
 
 			<div class="sidebar-delim"></div><!-- #линия-разделитель -->
 
-			<div class="left-panel__certification">
-				<ul class="sidebar_list">
-					<li><p>Сертифицировано</p></li>
-					<?php dynamic_sidebar( 'yd_icon' ); ?>
-				</ul>
-			</div>
+			<ul class="sidebar-social clearfix">
+				<li><?php dynamic_sidebar( 'social_vk' ); ?></li>
+				<li><?php dynamic_sidebar( 'social_t' ); ?></li>
+				<li><?php dynamic_sidebar( 'social_youtube' ); ?></li>
+				<li><?php dynamic_sidebar( 'social_instagram' ); ?></li>
+				<li><?php dynamic_sidebar( 'social_f' ); ?></li>
+			</ul>
 
 			<div class="sidebar-delim"></div><!-- #линия-разделитель -->
 
