@@ -224,7 +224,7 @@ add_action( 'after_setup_theme', 'dinelli_setup' );
  		'name'          => esc_html__( 'Политика конфиденциальности', 'dinelli' ),
  		'id'            => 'footer_policy',
  		'description'   => esc_html__( 'Add widgets here.', 'dinelli' ),
- 		'before_widget' => '<div class="passive-link">',
+ 		'before_widget' => '<div class="passive-link footer_policy">',
  		'after_widget'  => '</div>',
  		'before_title'  => '<h2 class="widget-title">',
  		'after_title'   => '</h2>',

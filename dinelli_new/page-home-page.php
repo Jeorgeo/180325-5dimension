@@ -20,7 +20,7 @@ get_header(); ?>
 	<section class="main box-1">
 		<div class="container">
 			<div class="main__box-content">
-				<h2><?php the_field('title_d1'); ?><h2>
+				<h1><?php the_field('title_d1'); ?></h1>
 				<?php the_field('text_d1'); ?>
 			</div>
 		</div>

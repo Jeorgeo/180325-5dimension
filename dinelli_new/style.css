@@ -51,6 +51,11 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
   }
 
 @font-face {
+   font-family: 'PFSquareSansPro-Bold'; /* Гарнитура шрифта */
+   src: url('fonts/PFSquareSansPro-Bold.ttf'); /* Путь к файлу со шрифтом */
+  }
+
+@font-face {
    font-family: 'Roboto Slab'; /* Гарнитура шрифта */
    src: url(fonts/RobotoSlab-Thin.ttf); /* Путь к файлу со шрифтом */
   }
@@ -220,6 +225,14 @@ img {
 
 .color-text {
   color: #e93a1d;
+}
+
+.upper-text {
+  text-transform: uppercase;
+}
+
+.big-text {
+  font-size: 1.3em;
 }
 
 /*--------------------------------------------------------------
@@ -431,7 +444,7 @@ img {
 --------------------------------------------------------------*/
 
 main {
-  min-height: 600px;
+  min-height: 450px;
 }
 
 .box-content {
@@ -596,8 +609,16 @@ main {
 	position: relative;
 }
 
+.footer h2 {
+  text-transform: uppercase;
+}
+
 .footer a {
 	color: #fefefe;
+}
+
+.footer a:hover {
+	color: #e93a1d;
 }
 
 .top-footer,
@@ -608,20 +629,28 @@ main {
   align-items: flex-start;
 }
 
- .top-footer .cols,
- .bottom-footer .cols {
-   display: block;
+.top-footer .cols,
+.bottom-footer .cols {
+  display: block;
  }
 
- .footer-contacts .site-branding {
-   max-width: 120px;
+ .footer .active-link li {
+   margin: 0.5em 0;
  }
+
+.footer-contacts .site-branding {
+  max-width: 120px;
+}
+
+.footer-contacts .site-branding {
+  padding: 0;
+}
 
 .footer .contacts_icon {
 	display: block;
 	width: 100%;
-	margin: 0.5em 0;
-  padding: 0 2em;
+	margin: 1em 0;
+  padding: 0;
 	text-align: left;
 }
 
@@ -632,6 +661,10 @@ main {
 	height: 25px;
 	margin-right: 2px;
 	border-radius: 50%;
+}
+
+.footer-contacts .phone a {
+  padding-left: 0;
 }
 
 .footer .contacts_icon .contacts_icon-w {
@@ -654,74 +687,30 @@ main {
 	background-size: 70%;
 }
 
-.footer-contacts a,
-.footer_content a,
-.footer_copy a {
+.footer a {
   text-decoration: none;
 }
 
-.footer .footer-contacts a:hover,
-.footer .footer_content a:hover,
-.footer .footer_copy a:hover {
+.footer a:hover,
+.footer .passive-link a:hover {
   color: #e93a1d;
 }
 
-.footer .row .footer_content .active-link ul,
-.footer .row .footer_content .passive-link ul {
-	list-style-type: '- ';
-	padding-left: 0;
+.footer .passive-link,
+.footer .passive-link a {
+  color: #717070;
 }
 
-.footer_content .passive-link,
-.footer_content .passive-link a {
-  color: #565555;
-}
-
-.footer .footer-contacts a:active,
-.footer .footer_content a:active,
-.footer .footer_copy a:active {
-  background-color: rgba(255, 255, 255, 0.1);
+.footer .passive-link.footer_policy a {
+  text-decoration: underline;
 }
 
 .footer .site-branding {
   margin-left: 0;
 }
 
-.footer-contacts p,
-.footer_content p {
+.footer p {
   margin: 0;
-}
-
-.footer_content .about-link li {
-  margin: 0.5em 0;
-  font-weight: bold;
-  font-size: 0.95em;
-}
-
-.footer_content ul li {
-  margin: 0.5em 0;
-  font-size: 0.95em;
-}
-
-.footer .footer_copy a {
-  color: #ffffff;
-}
-
-.footer .footer_copy {
-  color: #908f8f;
-}
-
-.footer_copy p {
-  margin: 0.5em 0;
-}
-
-.footer .footer_copy {
-  line-height: 1.5em;
-  font-size: 0.9em;
-}
-
-.footer .footer_copy .polity_link {
-  text-decoration: underline;
 }
 
 /*--------------------------------------------------------------
@@ -867,9 +856,22 @@ main {
 
 .main.box-1 {
   padding: 5em 0 1em 0;
-  background: #030303 url("img/5d_bg.jpg") no-repeat 0% 0%;
+  background: #030303 url("img/5d_bg_n.jpg") no-repeat 100% 0%;
   background-size: contain;
   color: #ffffff;
+}
+
+.main.box-1 h1 {
+  font-family: 'PFSquareSansPro-Bold', 'Arial', sans-serif;
+  font-size: 2.8em;
+  line-height: 1em;
+}
+
+.main.box-1 p {
+  font-family: 'PFSquareSansPro-Regular', 'Arial', sans-serif;
+  font-size: 1.4em;
+  line-height: 0.9em;
+  margin: 0.5em 0;
 }
 
 /*-------------------tablet 768px-----------------------*/
@@ -898,23 +900,6 @@ main {
     width: 90%;
   }
 
-  .thanks .container {
-    max-width: 760px;
-    margin-left: 0;
-  }
-
-  .thanks {
-    background: rgba(255, 255, 255, 0.9) url("img/dn_spasibo.png") no-repeat 0 100%;
-    background-size: contain;
-  }
-
-  .thanks .box-content {
-    width: 50%;
-    margin-left: 48%;
-    margin-bottom: 10%;
-    padding-bottom: 50%;
-  }
-
   .big-title {
     font-size: 2.5em;
   }
@@ -923,37 +908,6 @@ main {
     text-align: center;
     font-size: 2.5em;
     line-height: 1em;
-  }
-
-  .bottom-form .cloud-form {
-    margin: 0 0 0 165px;
-  }
-
-  .details-form h4 {
-    text-align: center;
-  }
-
-  .details-form::after {
-    left: -85px;
-    width: 480px;
-    height: 295px;
-  }
-
-  .bottom-form::after {
-    top: -40px;
-    left: -45px;
-    width: 660px;
-    height: 415px;
-  }
-
-  .bottom-form::before {
-    z-index: 0;
-    width: 200px;
-    height: 150px;
-    top: -15px;
-    left: 50px;
-    background: url("img/line-mail.png") no-repeat 50% 50%;
-    background-size: contain;
   }
 
   .left-panel {
@@ -983,9 +937,17 @@ main {
     background-attachment: fixed;
     box-sizing: border-box;
   }
+
+  .footer h2 {
+    margin-top: 0;
+  }
 }
 
 @media screen and (min-width: 960px) {
+
+  main {
+    min-height: 600px;
+  }
 
   .left-panel__menu-toggle {
     display: none;
@@ -1015,6 +977,14 @@ main {
     padding-left: 235px;
     overflow: hidden;
   }
+
+  .main.box-1 {
+    min-height: 600px;
+    padding: 210px 0 3em 60%;
+    background-size: 100%;
+    background-attachment: fixed;
+    box-sizing: border-box;
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -1023,6 +993,12 @@ main {
     max-width: 768px;
     margin: 0 5%;
   }
+
+  .footer .container {
+    max-width: 1600px;
+    padding-left: 5%;
+  }
+
 }
 
 @media screen and (min-width: 1280px) {
@@ -1081,9 +1057,15 @@ main {
   }
 
   .main.box-1 {
-    min-height: 600px;
-    padding: 360px 0 1em 50%;
+    min-height: 768px;
+    padding: 280px 0 1em 50%;
     background-size: cover;
+  }
+
+  .main.box-1 h1 {
+    margin: 0.3em 0;
+    font-size: 4.5em;
+    line-height: 1em;
   }
 
   .top-footer,
@@ -1118,5 +1100,15 @@ main {
 @media screen and (min-width: 1600px) {
   .main.box-1 {
     min-height: 900px;
+    padding: 400px 0 1em 50%;
+    background-size: contain;
+  }
+
+  .main.box-1 h1 {
+    font-size: 6.5em;
+  }
+
+  .main.box-1 p {
+    font-size: 2em;
   }
 }
