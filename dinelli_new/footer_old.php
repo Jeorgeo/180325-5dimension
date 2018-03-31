@@ -11,42 +11,45 @@
 
 ?>
 
+		</div><!--/#content-->
 		<div id="footer" class="main footer">
 			<div class="container">
-				<div class="top-footer">
+				<div class="row clearfix">
 					<div class="cols col-4 col-md-6">
-						<?php dynamic_sidebar( 'footer_links' ); ?>
-					</div>
-					<div class="cols col-2 col-md-6 footer-contacts">
-						<div id="logo" class="site-branding">
-						<?php	the_custom_logo(); ?>
-						</div>	
-						<?php dynamic_sidebar( 'phone' ); ?>
-						<?php dynamic_sidebar( 'phone_b' ); ?>
-						<div class="contacts_icon">
-							<span class="contacts_icon-w"></span>
-							<span class="contacts_icon-v"></span>
-							<span class="contacts_icon-t"></span>
+						<div class="footer_content">
+							<?php dynamic_sidebar( 'footer_al' ); ?>
+							<?php dynamic_sidebar( 'footer_pl' ); ?>
+							<?php dynamic_sidebar( 'footer_copy' ); ?>
 						</div>
-						<?php dynamic_sidebar( 'footer_contacts' ); ?>
 					</div>
-					<div class="cols col-5">
-						<?php dynamic_sidebar( 'footer_courses' ); ?>
-					</div>
-				</div>
-				<div class="bottom-footer">
-					<div class="cols col-4 col-md-6">
-						<?php dynamic_sidebar( 'footer_about' ); ?>
-					</div>
-					<div class="cols col-2 col-md-6">
-						<?php dynamic_sidebar( 'footer_policy' ); ?>
-					</div>
-					<div class="cols col-5">
-						<?php dynamic_sidebar( 'footer_copy' ); ?>
+					<div class="cols col-7 col-md-6 footer__footer-copy">
+						<div class="footer__middle-box">
+							<div id="logo" class="site-branding">
+							<?php	the_custom_logo(); ?>
+							</div>
+							<div class="footer-contacts">
+								<?php dynamic_sidebar( 'phone' ); ?>
+								<?php dynamic_sidebar( 'phone_b' ); ?>
+								<div class="contacts_icon">
+									<span class="contacts_icon-w"></span>
+									<span class="contacts_icon-v"></span>
+									<span class="contacts_icon-t"></span>
+								</div>
+							</div>
+							<div class="footer_content">
+								<?php dynamic_sidebar( 'footer_about' ); ?>
+							</div>
+						</div>
+						<div class="footer__left-box">
+							<div class="footer_content">
+								<?php dynamic_sidebar( 'footer_content' ); ?>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div><!--/#footer-->
+	</div><!-- #page -->
 
 	<!-- popup form -->
 

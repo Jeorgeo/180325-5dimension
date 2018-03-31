@@ -44,14 +44,7 @@
 			<div class="left-panel__contacts">
 				<ul class="sidebar-contacts">
 					<?php dynamic_sidebar( 'mail' ); ?>
-					<?php dynamic_sidebar( 'phone' ); ?>
-					<?php dynamic_sidebar( 'phone_b' ); ?>
 					<li>
-						<a href="#" id="js_modal" onclick="showPopup()" class="show_modal">
-							<span class="color-text">[ </span>
-							Дикша Любви
-							<span class="color-text"> ]</span>
-						</a>
 						<a href="#" id="js_modal" onclick="showPopupR()" class="show_modal">
 							<span class="color-text">[ </span>
 							Оставить отзыв

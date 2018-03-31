@@ -111,8 +111,8 @@ add_action( 'after_setup_theme', 'dinelli_setup' );
  		'name'          => esc_html__( 'phone-top', 'dinelli' ),
  		'id'            => 'phone',
  		'description'   => esc_html__( 'Add widgets here.', 'dinelli' ),
- 		'before_widget' => '<li>',
- 		'after_widget'  => '</li>',
+ 		'before_widget' => '<div class="phone">',
+ 		'after_widget'  => '</div>',
  		'before_title'  => '<h2 class="widget-title">',
  		'after_title'   => '</h2>',
  	) );
@@ -120,8 +120,8 @@ add_action( 'after_setup_theme', 'dinelli_setup' );
  		'name'          => esc_html__( 'phone-bottom', 'dinelli' ),
  		'id'            => 'phone_b',
  		'description'   => esc_html__( 'Add widgets here.', 'dinelli' ),
- 		'before_widget' => '<li>',
- 		'after_widget'  => '</li>',
+ 		'before_widget' => '<div class="phone">',
+ 		'after_widget'  => '</div>',
  		'before_title'  => '<h2 class="widget-title">',
  		'after_title'   => '</h2>',
  	) );
@@ -185,8 +185,8 @@ add_action( 'after_setup_theme', 'dinelli_setup' );
  		'after_title'   => '</h2>',
  	) );
 	register_sidebar( array(
-		'name'          => esc_html__( 'Ссылки на обучение активные', 'dinelli' ),
-		'id'            => 'footer_al',
+		'name'          => esc_html__( 'обучающие материалы', 'dinelli' ),
+		'id'            => 'footer_links',
 		'description'   => esc_html__( 'Add widgets here.', 'dinelli' ),
 		'before_widget' => '<div class="active-link">',
 		'after_widget'  => '</div>',
@@ -194,37 +194,46 @@ add_action( 'after_setup_theme', 'dinelli_setup' );
 		'after_title'   => '</h2>',
 	) );
 	register_sidebar( array(
-		'name'          => esc_html__( 'Ссылки на обучение пассивные', 'dinelli' ),
-		'id'            => 'footer_pl',
+		'name'          => esc_html__( 'Контакты в подвале', 'dinelli' ),
+		'id'            => 'footer_contacts',
 		'description'   => esc_html__( 'Add widgets here.', 'dinelli' ),
-		'before_widget' => '<div class="passive-link">',
+		'before_widget' => '<div class="active-link">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
 	register_sidebar( array(
-		'name'          => esc_html__( 'Ссылки на страницы о', 'dinelli' ),
-		'id'            => 'footer_about',
+		'name'          => esc_html__( 'обучающие курсы', 'dinelli' ),
+		'id'            => 'footer_courses',
 		'description'   => esc_html__( 'Add widgets here.', 'dinelli' ),
-		'before_widget' => '<div class="about-link">',
+		'before_widget' => '<div class="active-link">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
 	register_sidebar( array(
- 		'name'          => esc_html__( 'Контент в подвале', 'dinelli' ),
- 		'id'            => 'footer_content',
+ 		'name'          => esc_html__( 'Юридический адрес', 'dinelli' ),
+ 		'id'            => 'footer_about',
  		'description'   => esc_html__( 'Add widgets here.', 'dinelli' ),
- 		'before_widget' => '<div class="content-link">',
+ 		'before_widget' => '<div class="passive-link">',
  		'after_widget'  => '</div>',
  		'before_title'  => '<h2 class="widget-title">',
  		'after_title'   => '</h2>',
  	) );
  	register_sidebar( array(
- 		'name'          => esc_html__( 'Копирайт и политика в подвале', 'dinelli' ),
+ 		'name'          => esc_html__( 'Политика конфиденциальности', 'dinelli' ),
+ 		'id'            => 'footer_policy',
+ 		'description'   => esc_html__( 'Add widgets here.', 'dinelli' ),
+ 		'before_widget' => '<div class="passive-link">',
+ 		'after_widget'  => '</div>',
+ 		'before_title'  => '<h2 class="widget-title">',
+ 		'after_title'   => '</h2>',
+ 	) );
+	register_sidebar( array(
+ 		'name'          => esc_html__( 'Авторские права', 'dinelli' ),
  		'id'            => 'footer_copy',
  		'description'   => esc_html__( 'Add widgets here.', 'dinelli' ),
- 		'before_widget' => '<div id="%1$s" class="footer_copy">',
+ 		'before_widget' => '<div class="passive-link">',
  		'after_widget'  => '</div>',
  		'before_title'  => '<h2 class="widget-title">',
  		'after_title'   => '</h2>',
