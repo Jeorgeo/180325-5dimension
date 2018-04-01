@@ -34,31 +34,11 @@ $news = get_posts(
 
 <main class="content-area">
 	<section class="blog box-1">
-		<div class="container">
-			<div class="blog__box-content clearfix">
-				<div class="cols col-6 blog_title">
-					<h1>
-						Блог
-					</h1>
-					<p>
-						Интернет журнал Нели Давыдовой о  контекстной рекламе, обо всех аспектах торгового маркетинга, о продажах, рекламе, с практическими материалами.
-					</p>
-				</div>
-			</div>
-		</div>
+		<?php the_post(); ?>
+		<?php the_content(); ?>
 	</section>
 	<section class="blog box-2">
 		<div class="container">
-			<nav class="reviews__nav">
-				<ul>
-					<li>
-						<a class="active_link">Блог</a>
-					</li>
-					<li>
-						<a href="<?php the_field('vlog'); ?>" >Видео Блог</a>
-					</li>
-				</ul>
-			</nav>
 			<?php
 				foreach ($news as $obj) {
 					if($obj->post_name == 'archive'){
@@ -67,14 +47,14 @@ $news = get_posts(
 			 ?>
 			<figure class="blog__box-content clearfix">
 				<div class="cols col-5 col-4-md">
-					<a href="/blog/<?php echo $obj->post_name; ?>" target="_blank">
-						<img src="<?php echo get_field('image',$obj->ID); ?>" alt="">
+					<a href="/blog/<?php echo $obj->post_name; ?>">
+						<img src="<?php echo get_field('blog-image',$obj->ID); ?>" alt="">
 					</a>
 				</div>
 				<div class="cols col-5 col-12-md">
 					<h4 class="small-title"><?php echo $obj->post_title; ?></h4>
-					<?php echo get_field('description', $obj->ID); ?>
-					<a href="/blog/<?php echo $obj->post_name; ?>" target="_blank">Читать далее...</a>
+					<?php echo get_field('blog-description', $obj->ID); ?>
+					<a href="/blog/<?php echo $obj->post_name; ?>">Читать далее...</a>
 				</div>
 			</figure>
 			<?php

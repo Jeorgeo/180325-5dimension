@@ -42,7 +42,7 @@ function get_vk_browser($url='',$uagent=''){
 
 function get_vk_topik(){
 	$token = '4168e3bffbe12217557fce3b15fc8e1829b04ae9f3210abc7446c34b00ceae65fbbccc5b840e34370f500';
-	$board_getComments = 'https://api.vk.com/method/board.getComments?group_id=55517976&topic_id=28357561&count=100&sort=desc&access_token='.$token.'&v=5.68';
+	$board_getComments = 'https://api.vk.com/method/board.getComments?group_id=55785054&topic_id=36583937&count=100&sort=desc&access_token='.$token.'&v=5.68';
 	$board_getComments_result = get_vk_browser($board_getComments);
 
 

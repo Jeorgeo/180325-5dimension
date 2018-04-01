@@ -14,13 +14,13 @@
 		<div id="footer" class="main footer">
 			<div class="container">
 				<div class="top-footer">
-					<div class="cols col-4 col-md-6">
+					<div class="cols col-4 col-md-6 footer_links">
 						<?php dynamic_sidebar( 'footer_links' ); ?>
 					</div>
 					<div class="cols col-2 col-md-6 footer-contacts">
 						<div id="logo" class="site-branding">
 						<?php	the_custom_logo(); ?>
-						</div>	
+						</div>
 						<?php dynamic_sidebar( 'phone' ); ?>
 						<?php dynamic_sidebar( 'phone_b' ); ?>
 						<div class="contacts_icon">
@@ -35,7 +35,7 @@
 					</div>
 				</div>
 				<div class="bottom-footer">
-					<div class="cols col-4 col-md-6">
+					<div class="cols col-4 col-md-6 footer_about">
 						<?php dynamic_sidebar( 'footer_about' ); ?>
 					</div>
 					<div class="cols col-2 col-md-6">

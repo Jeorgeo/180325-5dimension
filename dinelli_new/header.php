@@ -47,7 +47,7 @@
 					<li>
 						<a href="#" id="js_modal" onclick="showPopupR()" class="show_modal">
 							<span class="color-text">[ </span>
-							Оставить отзыв
+							Заказать звонок
 							<span class="color-text"> ]</span>
 						</a>
 					</li>

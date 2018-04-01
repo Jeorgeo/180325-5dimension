@@ -260,7 +260,7 @@ function dinelli_scripts() {
 
 	wp_enqueue_style( 'dinelli-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'dinelli-skip-link-focus-fix', $dineli_url . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+	/*wp_enqueue_script( 'dinelli-skip-link-focus-fix', $dineli_url . '/js/skip-link-focus-fix.js', array(), '20151215', true );*/
 
 	wp_enqueue_script('jquery-min', $dineli_url . '/js/jquery.min.js', array(), true );
 
@@ -329,6 +329,21 @@ require get_template_directory() . '/inc/reviews_video.php';
 require get_template_directory() . '/inc/vk_topik.php';
 
 /**
- * Custom events.
+ * Custom video.
  */
-require get_template_directory() . '/inc/events.php';
+require get_template_directory() . '/inc/vlog.php';
+
+/**
+ * Require photo.
+ */
+require get_template_directory() . '/inc/photo.php';
+
+/**
+ * Require books.
+ */
+require get_template_directory() . '/inc/books.php';
+
+/**
+ * Require audio.
+ */
+require get_template_directory() . '/inc/audio.php';

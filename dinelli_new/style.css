@@ -31,6 +31,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
   ## Header menu
 # Footer
 # Content
+  ## blog(vlog)
 # Popup form
 # Custom class
 
@@ -184,6 +185,10 @@ b, strong {
   font-weight: bold;
 }
 
+figure {
+  margin: 0;
+}
+
 img {
   display: block;
   max-width: 100%;
@@ -195,6 +200,7 @@ img {
   max-width: 300px;
   width: 100%;
   margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .clearfix::after {
@@ -233,6 +239,10 @@ img {
 
 .big-text {
   font-size: 1.3em;
+}
+
+.site {
+  overflow-x: hidden;
 }
 
 /*--------------------------------------------------------------
@@ -501,6 +511,51 @@ main {
 }
 
 /*--------------------------------------------------------------
+# Content
+  ## Photo
+--------------------------------------------------------------*/
+
+main.photo {
+  background-color: #000e27;
+}
+
+/*--------------------------------------------------------------
+# Content
+  ## reviews
+--------------------------------------------------------------*/
+
+.reviews__nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.reviews__nav li {
+  font-family: 'PFSquareSansPro-Bold', 'Arial', serif;
+  font-size: 1.1em;
+  color: #000e27;
+}
+
+.reviews__nav a {
+  border-bottom: 1px dotted #000e27;
+}
+
+.reviews__nav a:hover {
+  color: #e93a1d;
+  border-bottom: 1px solid #e93a1d;
+}
+
+.reviews__nav a.active_link {
+  color: #333e52;
+  border-bottom: none;
+}
+
+.reviews__nav .active_link:hover {
+  color: #e93a1d;
+  border-bottom: 1px solid #e93a1d;
+}
+
+/*--------------------------------------------------------------
 # Header
   ## Header mobile menu
 --------------------------------------------------------------*/
@@ -634,12 +689,31 @@ main {
   display: block;
  }
 
- .footer .active-link li {
+.footer .footer_links h2 {
+  padding-left: 1em;
+}
+
+.footer .footer_links ul {
+  list-style: outside;
+}
+
+.footer .footer_about,
+.footer .footer_links ul > li {
+  padding-left: 1em;
+}
+
+.footer .active-link li {
    margin: 0.5em 0;
  }
 
+.footer-contacts > div,
+.passive-link.footer_policy {
+  padding-left: 0.5em;
+}
+
 .footer-contacts .site-branding {
-  max-width: 120px;
+  max-width: 200px;
+  padding-left: 0;
 }
 
 .footer-contacts .site-branding {
@@ -650,7 +724,6 @@ main {
 	display: block;
 	width: 100%;
 	margin: 1em 0;
-  padding: 0;
 	text-align: left;
 }
 
@@ -874,6 +947,119 @@ main {
   margin: 0.5em 0;
 }
 
+.mosaicflow__column {
+  float: left;
+}
+
+.mosaicflow__item a {
+  position: relative;
+  display: block;
+  width: 100;
+}
+
+.mosaicflow__item .mosaicflow__shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0.5em;
+  color: #fafafa;
+  background-color: rgba(0, 14, 39, 0.7);
+  box-sizing: border-box;
+  animation-name: hide-popup;
+  animation-duration: 0.5s;
+  opacity: 0;
+}
+
+.mosaicflow__item a:hover .mosaicflow__shadow {
+  animation-name: show-popup;
+  animation-duration: 0.5s;
+  opacity: 1;
+}
+
+.mosaicflow__item img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/*--------------------------------------------------------------
+# Content
+  ## blog
+--------------------------------------------------------------*/
+
+.vlog.box-2 .container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 2em;
+}
+
+.vlog.box-2 .container a {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.vlog_bg-play {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 14, 39, 0.7) url('img/pl_video.png') no-repeat 50% 50%;
+  background-size: cover;
+  animation-name: hide-popup;
+  animation-duration: 0.5s;
+  opacity: 0;
+}
+
+.vlog.box-2 .container a:hover .vlog_bg-play,
+.vlog.box-2 .container a:active .vlog_bg-play {
+  animation-name: show-popup;
+  animation-duration: 0.5s;
+  opacity: 1;
+}
+
+.books__btn {
+  position: relative;
+  width: 150px;
+  margin: 1em 0;
+  padding: 0.7em;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: 'PFSquareSansPro-Bold', 'Arial', serif;
+  font-size: 1.1em;
+  background-color: transparent;
+  border: 1px solid #000e27;
+}
+
+.blog figure .books__btn:hover,
+.blog figure .books__btn:active {
+  color: #ffffff;
+}
+
+.books__btn::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  content: '';
+  background-color: #000e27;
+  animation-name: hide-popup;
+  animation-duration: 0.5s;
+  opacity: 0;
+}
+
+.books__btn:hover::after {
+  animation-name: show-popup;
+  animation-duration: 0.5s;
+  opacity: 1;
+}
+
 /*-------------------tablet 768px-----------------------*/
 
 @media screen and (min-width: 768px) {
@@ -941,6 +1127,31 @@ main {
   .footer h2 {
     margin-top: 0;
   }
+
+  /*--------------------------------------------------------------
+  # Content
+    ## blog
+  --------------------------------------------------------------*/
+
+  .blog a {
+    display: block;
+    font-family: 'PFSquareSansPro-Bold' 'Arial', sans-serif;
+    font-size: 1.1em;
+    color: #000e27;
+  }
+
+  .blog a:hover {
+    color: #e93a1d;
+  }
+
+  .blog .cols.col-4-md {
+    width: 40%;
+    margin-right: 5%;
+  }
+
+  .blog .cols.col-12-md {
+    width: 55%;
+  }
 }
 
 @media screen and (min-width: 960px) {
@@ -991,12 +1202,19 @@ main {
 
   .container {
     max-width: 768px;
-    margin: 0 5%;
+    margin: 0;
+    padding: 0 5%;
   }
 
-  .footer .container {
+  .footer .container,
+  .blog .container {
     max-width: 1600px;
     padding-left: 5%;
+  }
+
+  .blog .container {
+    padding-right: 5%;
+    box-sizing: border-box;
   }
 
 }
@@ -1005,7 +1223,6 @@ main {
 
   .container {
     max-width: 1170px;
-    margin-left: 0;
   }
 
   .cols.col-1 {
@@ -1072,6 +1289,16 @@ main {
   .bottom-footer {
     justify-content: space-between;
   }
+
+
+  /*--------------------------------------------------------------
+  # Content
+    ## blog
+  --------------------------------------------------------------*/
+
+  .blog.box-2 {
+    margin-bottom: 3em;
+  }
 }
 
 @media screen and (min-width: 1360px) {
@@ -1093,7 +1320,6 @@ main {
 @media screen and (min-width: 1440px) {
   .container {
     width: 100%;
-    margin: 0;
   }
 }
 
@@ -1110,5 +1336,19 @@ main {
 
   .main.box-1 p {
     font-size: 2em;
+  }
+
+  /*--------------------------------------------------------------
+  # Content
+    ## blog
+  --------------------------------------------------------------*/
+
+  .blog .cols.col-4-md {
+    width: 25%;
+    margin-right: 5%;
+  }
+
+  .blog .cols.col-12-md {
+    width: 70%;
   }
 }
