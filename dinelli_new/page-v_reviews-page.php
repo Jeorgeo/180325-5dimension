@@ -31,7 +31,7 @@ $news = get_posts(
 		)
 );?>
 
-<main class="content-area">
+<main class="content-area reviews-video">
 	<section class="reviews box-1">
 		<div class="container">
 			<span class="box-title">
@@ -60,13 +60,13 @@ $news = get_posts(
 			 ?>
 			<figure class="blog__box-content clearfix">
 				<div class="cols col-5 col-4-md">
-					<?php echo get_field('video', $obj->ID); ?>
+					<?php echo get_field('reviews-video', $obj->ID); ?>
 				</div>
 				<div class="cols col-5 col-12-md">
 					<h2 class="small-title">
 						<?php echo $obj->post_title; ?>
 					</h2>
-					<?php echo get_field('description', $obj->ID); ?>
+					<?php echo get_field('reviews-description', $obj->ID); ?>
 					<a href="<?php echo $obj->post_name; ?>">Читать далее...</a>
 				</div>
 			</figure>

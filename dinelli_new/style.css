@@ -110,13 +110,13 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 }
 
 @keyframes swell-r {
-  from { width: 85%; }
-  to   { width: 100%; }
+  from { max-width: 100%; }
+  to   { max-width: 110%; }
 }
 
 @keyframes deflate-r {
-  from { width: 100%; }
-  to   { width: 85%; }
+  from { max-width: 110%; }
+  to   { max-width: 100%; }
 }
 
 @keyframes rotate-up1 {
@@ -138,7 +138,6 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
   from { opacity: 1;}
   to   { opacity: 0; }
 }
-
 
 /*-------------------first mobile 360px-----------------------*/
 /*--------------------------------------------------------------
@@ -530,13 +529,11 @@ main.photo {
   justify-content: center;
 }
 
-.reviews__nav li {
+.reviews__nav a {
+  text-transform: uppercase;
   font-family: 'PFSquareSansPro-Bold', 'Arial', serif;
   font-size: 1.1em;
   color: #000e27;
-}
-
-.reviews__nav a {
   border-bottom: 1px dotted #000e27;
 }
 
@@ -550,10 +547,59 @@ main.photo {
   border-bottom: none;
 }
 
+.reviews__nav a.active_link:hover {
+  color: #333e52;
+  border-bottom: none;
+}
+
 .reviews__nav .active_link:hover {
   color: #e93a1d;
   border-bottom: 1px solid #e93a1d;
 }
+
+.reviews .box-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: stretch;
+  margin-bottom: 2em;
+}
+
+.reviews .box-content article {
+  display: block;
+  width: 100%;
+}
+
+.reviews .box-content article h4 {
+  min-height: 100px;
+}
+
+.reviews-photo {
+  overflow: hidden;
+  height: 180px;
+}
+
+.reviews-photo img {
+  animation-name: deflate-r;
+  animation-duration: 1s;
+  max-width: 100%;
+}
+
+.reviews-photo a:hover img {
+  animation-name: swell-r;
+  animation-duration: 1s;
+  max-width: 110%;
+}
+
+.reviews iframe {
+  max-width: 100%;
+  max-height: 180px;
+}
+
+.blog__box-content {
+  margin-top: 1em;
+}
+
 
 /*--------------------------------------------------------------
 # Header
@@ -984,6 +1030,39 @@ main.photo {
   height: auto;
 }
 
+.slick-slide {
+  position: relative;
+  max-height: 150px;
+  max-width: 300px;
+  margin: 0 2em;
+  overflow: hidden;
+}
+
+.slick-slide .reviews-photo_mantle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 1em;
+  background-color: rgba(0, 14, 39, 0.7);
+  color: #ffffff;
+  box-sizing: border-box;
+}
+
+.slick-slide img {
+  animation-name: deflate-r;
+  animation-duration: 1s;
+  max-width: 100%;
+}
+
+.slick-slide:hover img {
+  animation-name: swell-r;
+  animation-duration: 1s;
+  max-width: 110%;
+}
+
+
 /*--------------------------------------------------------------
 # Content
   ## blog
@@ -1058,6 +1137,23 @@ main.photo {
   animation-name: show-popup;
   animation-duration: 0.5s;
   opacity: 1;
+}
+
+.reviews-video {
+  padding: 1em 0;
+}
+
+.news-slider {
+  margin-top: 1em;
+  margin-bottom: 2em;
+}
+
+.reviews-video.entry-content h1 {
+  font-size: 1.6em;
+}
+
+.reviews-video.entry-content h2 {
+  font-size: 1.3em;
 }
 
 /*-------------------tablet 768px-----------------------*/
@@ -1144,13 +1240,22 @@ main.photo {
     color: #e93a1d;
   }
 
-  .blog .cols.col-4-md {
+  .blog .cols.col-4-md,
+  .reviews-video .blog .cols.col-4-md,
+  .reviews-video .cols.col-4-md {
     width: 40%;
     margin-right: 5%;
   }
 
-  .blog .cols.col-12-md {
+  .blog .cols.col-12-md,
+  .reviews-video .blog .cols.col-12-md,
+  .reviews-video .cols.col-12-md {
     width: 55%;
+  }
+
+  .reviews .box-content article {
+    display: block;
+    width: 45%;
   }
 }
 
@@ -1196,6 +1301,38 @@ main.photo {
     background-attachment: fixed;
     box-sizing: border-box;
   }
+
+  .reviews__nav ul {
+    justify-content: flex-start;
+  }
+
+  .reviews__nav li {
+    margin-right: 2em;
+  }
+
+  .reviews .box-content {
+    justify-content: space-between;
+  }
+
+  .reviews .box-content article {
+    display: block;
+    width: 30%;
+  }
+
+  .reviews iframe,
+  .reviews-video iframe {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .blog__box-content {
+    margin-top: 2em;
+  }
+
+  .news-slider {
+    margin-top: 2em;
+    margin-bottom: 3em;
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -1215,6 +1352,10 @@ main.photo {
   .blog .container {
     padding-right: 5%;
     box-sizing: border-box;
+  }
+
+  .reviews .box-content {
+    margin-bottom: 3em;
   }
 
 }

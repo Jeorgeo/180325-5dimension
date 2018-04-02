@@ -120,6 +120,15 @@ winPopup.addEventListener("click", function(event) {
 
 $(document).ready(function() {
 
+  $('.news-slider').slick({
+  dots: true,
+  infinite: true,
+  speed: 300,
+  slidesToShow: 1,
+  centerMode: true,
+  variableWidth: true
+});
+
 	//E-mail Ajax Send
 	$(".reviews-form").submit(function() { //Change
 		var th = $(this).serialize();

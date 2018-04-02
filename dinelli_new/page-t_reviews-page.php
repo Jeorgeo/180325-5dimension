@@ -59,24 +59,22 @@ $news = get_posts(
 								continue;
 						}
 				 ?>
-				<div class="row clearfix">
-					<div class="cols col-3 col-md-6">
+					<article>
 						<h4 class="small-title">
 							<?php echo $obj->post_title; ?>
 						</h4>
 						<figure class="reviews-photo">
 							<a href="/t_reviews-page/<?php echo $obj->post_name; ?>" target="_blank">
 								<div class="reviews-photo_mantle"></div>
-								<img src="<?php echo get_field('image',$obj->ID); ?>" alt="<?php echo $obj->post_title; ?>">								
+								<img src="<?php echo get_field('reviews-image',$obj->ID); ?>" alt="<?php echo $obj->post_title; ?>">
 							</a>
 						</figure>
 						<div class="reviews-text">
-							<?php echo get_field('description', $obj->ID); ?>
+							<?php echo get_field('reviews-description', $obj->ID); ?>
 							<a href="<?php echo $obj->post_name; ?> " target="_blank">Читать далее...</a>
 						</div>
-					</div>
+					</article>
 				<?php } ?>
-				</div>
 			</div>
 			<!-- для пагинации
 			<button class="reviews-next" type="button" name="button">Показать ещё</button>
