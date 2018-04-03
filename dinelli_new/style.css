@@ -165,8 +165,8 @@ h3,
 h4,
 h5,
 h6 {
+  font-family: 'PFSquareSansPro-Regular', 'Arial', serif;
 	font-size: 1.2em;
-  font-weight: 600;
 }
 
 ul {
@@ -1156,6 +1156,62 @@ main.photo {
   font-size: 1.3em;
 }
 
+.events.box-1 {
+  margin-bottom: 1em;
+}
+
+.events.box-1 h1 {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 2em 0;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 30px;
+  color: #fafafa;
+  background-color: #000e27;
+}
+
+.events__btn {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1em;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #000e27;
+  border: 2px solid #000e27;
+  box-sizing: border-box;
+}
+
+.events__btn:hover,
+.events__btn:active {
+  color: #ffffff;
+}
+
+.events__btn::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  content: '';
+  background-color: #000e27;
+  animation-name: hide-popup;
+  animation-duration: 0.5s;
+  opacity: 0;
+}
+
+.events__btn:hover::after {
+  animation-name: show-popup;
+  animation-duration: 0.5s;
+  opacity: 1;
+}
+
 /*-------------------tablet 768px-----------------------*/
 
 @media screen and (min-width: 768px) {
@@ -1170,8 +1226,16 @@ main.photo {
     margin: 1em 0;
   }
 
+  .cols.col-4-md {
+    width: 30%;
+  }
+
+  .cols.col-12-md {
+    width: 60%;
+  }
+
   .cols.col-md-6 {
-    width: 49.9998%;
+    width: 49%;
   }
 
   .float_right {
@@ -1257,6 +1321,59 @@ main.photo {
     display: block;
     width: 45%;
   }
+
+  .main-events {
+    min-height: 100%;
+    background: #000e27 url('img/5d_bg-events.jpg') no-repeat 235px 0;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+  .events.box-1 {
+    margin-bottom: 0;
+    background-color: #fafafa;
+  }
+
+  .events.box-1 h1 {
+    width: 35%;
+    padding: 1.5em;
+    box-sizing: border-box;
+  }
+
+  .events.box-2 {
+    position: relative;
+    z-index: 22;
+    color: #fafafa;
+    background-color: rgba(0, 14, 39, 0.5);
+  }
+
+
+
+  .events__box-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .events__box-content .cols.col-12-md {
+    display: flex;
+    align-items: center;
+  }
+
+  .events__box-content .cols.col-4-md {
+    width: 35%;
+    margin: 0;
+    padding: 1.5em;
+    color: #000e27;
+    background-color: #fafafa;
+  }
+
+  .events__btn {
+    width: 150px;
+    color: #fafafa;
+    border: 2px solid #fafafa;
+  }
+
 }
 
 @media screen and (min-width: 960px) {

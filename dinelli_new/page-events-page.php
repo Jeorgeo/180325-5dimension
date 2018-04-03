@@ -32,9 +32,11 @@ $news = get_posts(
 );
 ?>
 
-<main class="content-area">
+<main class="content-area main-events">
 	<section class="events box-1">
-		<h1>Мероприятия</h1>
+		<div class="container">
+			<h1>Мероприятия</h1>
+		</div>		
 	</section>
 	<section class="events box-2">
 		<div class="container">

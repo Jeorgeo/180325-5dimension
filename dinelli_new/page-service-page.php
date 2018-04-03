@@ -12,53 +12,51 @@
  * @package Dinelli
  */
 
-get_header(); ?>
+get_header();
+
+$news = get_posts(
+		array(
+				'numberposts' => -1,
+				'offset' => 0,
+				'orderby'     => 'date',
+				'order'       => 'DESC',
+				'category' => '',
+				'include' => '',
+				'exclude' => '',
+				'meta_key' => '',
+				'meta_value' => '',
+				'post_type' => 'service',
+				'post_parent' => '',
+				'post_status' => 'publish'
+		)
+);
+?>
 
 <main class="content-area">
 	<section class="service box-1">
 		<div class="container">
-			<span class="box-title">
-				Услуги<br>и предложения
-			</span>
-			<div class="box-content clearfix">
-				<h4 class="small-title box">
-					Инструменты дохода
-				</h4>
-				<div class="row clearfix">
-					<div class="cols col-5">
-						<?php the_field('pole1'); ?>
-					</div>
-					<div class="cols col-5">
-						<?php the_field('pole2'); ?>
-					</div>
+			<h1 class="small-title box">
+				<?php the_field('service-title'); ?>
+			</h1>
+			<div class="box-content">
+				<?php
+					foreach ($news as $obj) {
+						if($obj->post_name == 'archive'){
+								continue;
+						}
+				 ?>
+				<div class="cols col-3 col-md-6">
+					<a class="service__card" href="/service/<?php echo $obj->post_name; ?>" target="_blank">
+						<img src="<?php echo get_field('events-image',$obj->ID); ?>" alt="<?php echo $obj->post_title; ?>">
+						<p><?php echo get_field('events-description', $obj->ID); ?></p>
+					</a>
+					<a class="service__btn" href="<?php echo get_field('events-link', $obj->ID); ?>">Подробнее...</a>
 				</div>
-				<div class="row clearfix">
-					<div class="cols col-3 col-md-6 left_side">
-						<a class="service__card" href="<?php echo get_field('yd'); ?>" target="_blank">
-							<img src="<?php echo get_field('yd_img'); ?>">
-						</a>
-					</div>
-					<div class="cols col-3 col-md-6">
-						<a class="service__card" href="<?php echo get_field('ga'); ?>" target="_blank">
-							<img src="<?php echo get_field('ga_img'); ?>">
-						</a>
-					</div>
-					<div class="cols col-3 col-md-6 right_side">
-						<a class="service__card" href="<?php echo get_field('seo'); ?>" target="_blank">
-							<img src="<?php echo get_field('seo_img'); ?>">
-						</a>
-					</div>
-					<div class="cols col-3 col-md-6 left_side">
-						<a class="service__card" href="<?php echo get_field('site'); ?>" target="_blank">
-							<img src="<?php echo get_field('site_img'); ?>">
-						</a>
-					</div>
-					<div class="cols col-3 col-md-6">
-						<a class="service__card" href="<?php echo get_field('youtube'); ?>" target="_blank">
-							<img src="<?php echo get_field('youtube_img'); ?>">
-						</a>
-					</div>
-				</div>
+
+				<?php
+					}
+				 ?>
+
 			</div>
 		</div>
 	</section>

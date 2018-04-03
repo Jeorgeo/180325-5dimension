@@ -1,21 +1,21 @@
 <?php
-add_action('init', 'register_post_types_evn');
-function register_post_types_evn(){
-	register_post_type('events', array(
-		'label'  => 'events',
+add_action('init', 'register_post_types_serv');
+function register_post_types_serv(){
+	register_post_type('service', array(
+		'label'  => 'service',
 		'labels' => array(
-			'name'               => 'Мероприятия', // основное название для типа записи
-			'singular_name'      => 'Мероприятие', // название для одной записи этого типа
-			'add_new'            => 'Добавить Мероприятие', // для добавления новой записи
-			'add_new_item'       => 'Добавление Мероприятия', // заголовка у вновь создаваемой записи в админ-панели.
-			'edit_item'          => 'Редактирование Мероприятия', // для редактирования типа записи
-			'new_item'           => 'новое Мероприятие', // текст новой записи
-			'view_item'          => 'Смотреть Мероприятие', // для просмотра записи этого типа.
-			'search_items'       => 'Искать Мероприятие', // для поиска по этим типам записи
+			'name'               => 'Курсы', // основное название для типа записи
+			'singular_name'      => 'Курсы', // название для одной записи этого типа
+			'add_new'            => 'Добавить Курсы', // для добавления новой записи
+			'add_new_item'       => 'Добавление Курса', // заголовка у вновь создаваемой записи в админ-панели.
+			'edit_item'          => 'Редактирование Курса', // для редактирования типа записи
+			'new_item'           => 'новый Курс', // текст новой записи
+			'view_item'          => 'Смотреть Курс', // для просмотра записи этого типа.
+			'search_items'       => 'Искать Курс', // для поиска по этим типам записи
 			'not_found'          => 'Не найдено', // если в результате поиска ничего не было найдено
 			'not_found_in_trash' => 'Не найдено в корзине', // если не было найдено в корзине
 			'parent_item_colon'  => '', // для родителей (у древовидных типов)
-			'menu_name'          => 'Мероприятия', // название меню
+			'menu_name'          => 'Курсы', // название меню
 		),
 		'description'         => '',
 		'public'              => true,
@@ -27,7 +27,7 @@ function register_post_types_evn(){
 		'show_in_nav_menus'   => true,
 		'show_in_rest'        => true, // добавить в REST API. C WP 4.7
 		'rest_base'           => null, // $post_type. C WP 4.7
-		'menu_position'       => 11,
+		'menu_position'       => 12,
 		'menu_icon'           => null,
 		//'capability_type'   => 'post',
 		//'capabilities'      => 'post', // массив дополнительных прав для этого типа записи

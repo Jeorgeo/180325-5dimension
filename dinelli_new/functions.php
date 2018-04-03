@@ -338,3 +338,8 @@ require get_template_directory() . '/inc/audio.php';
  * Require events.
  */
 require get_template_directory() . '/inc/events.php';
+
+/**
+ * Require service.
+ */
+require get_template_directory() . '/inc/service.php';
