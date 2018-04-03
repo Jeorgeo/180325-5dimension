@@ -19,8 +19,7 @@ function moveMenu(){
 // popup windows
 
 var popup = document.querySelector(".popup-question");
-var popupSr = document.querySelector(".popup-question-thanks-r");
-var popupR = document.querySelector(".reviews-popup-question");
+var popupS = document.querySelector(".popup-question-thanks");
 var close = document.querySelectorAll(".popup-question-close");
 var winPopup = document.querySelector(".wrap");
 
@@ -29,47 +28,22 @@ function showPopup() {
   winPopup.classList.add("modal-content-show");
 };
 
-function showPopupR() {
-  popupR.classList.add("modal-content-show");
-  winPopup.classList.add("modal-content-show");
-};
-
 function removePopup() {
   popup.classList.add("modal-content-hide");
-  popupR.classList.add("modal-content-hide");
   winPopup.classList.add("modal-content-hide");
-  popupSr.classList.remove("modal-content-show");
+  popupS.classList.remove("modal-content-show");
   setTimeout(function() {
     popup.classList.remove("modal-content-show");
-    popupR.classList.remove("modal-content-show");
     winPopup.classList.remove("modal-content-show");
     popup.classList.remove("modal-content-hide");
-    popupR.classList.remove("modal-content-hide");
     winPopup.classList.remove("modal-content-hide");
   }, 600);
 
 };
 
-function showThankR() {
-  popupR.classList.remove("modal-content-show");
-  window.open("https://vk.com/davnelli");
-  popupSr.classList.add("modal-content-show");
-  setTimeout(function() {
-    popupSr.classList.add("modal-content-hide");
-    winPopup.classList.add("modal-content-hide");
-  }, 59000);
-  setTimeout(function() {
-    popupS.classList.remove("modal-content-show");
-    winPopup.classList.remove("modal-content-show");
-    popupS.classList.remove("modal-content-hide");
-    winPopup.classList.remove("modal-content-hide");
-  }, 60000);
-};
-
 function showThank() {
   winPopup.classList.add("modal-content-show");
   popup.classList.remove("modal-content-show");
-  window.open("https://vk.com/davnelli");
   popupS.classList.add("modal-content-show");
   setTimeout(function() {
     popupS.classList.add("modal-content-hide");
@@ -130,26 +104,16 @@ $(document).ready(function() {
 });
 
 	//E-mail Ajax Send
-	$(".reviews-form").submit(function() { //Change
-		var th = $(this).serialize();
-		$.ajax({
-			type: "POST",
-			url: "https://dinelli.ru/mail.php", //Change
-			data: th,
-		}).done(function() {
-			showThankR();
-		});
-		return false;
-	});
 
   $(".order-form").submit(function() { //Change
-		var th = $(this).serialize();
+		var th = $(this);
 		$.ajax({
 			type: "POST",
-			url: "https://dinelli.ru/mail.php", //Change
-			data: th,
+			url: "mail.php", //Change
+			data: th.serialize()
 		}).done(function() {
-			document.location.href = "https://dinelli.ru/spasibo/";
+			showThank();
+      th.trigger("reset");
 		});
 		return false;
 	});

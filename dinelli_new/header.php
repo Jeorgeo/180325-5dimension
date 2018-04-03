@@ -45,7 +45,7 @@
 				<ul class="sidebar-contacts">
 					<?php dynamic_sidebar( 'mail' ); ?>
 					<li>
-						<a href="#" id="js_modal" onclick="showPopupR()" class="show_modal">
+						<a href="#" id="js_modal" onclick="showPopup()" class="show_modal">
 							<span class="color-text">[ </span>
 							Заказать звонок
 							<span class="color-text"> ]</span>
