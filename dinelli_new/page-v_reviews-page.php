@@ -32,21 +32,23 @@ $news = get_posts(
 );?>
 
 <main class="content-area reviews-video">
+	<section class="blog box-1">
+		<img src="<?php echo get_field('title-image' ); ?>" alt="5Dimansion - Университет физики сознания <?php echo get_field('title-text' ); ?>">
+		<div class="title-text">
+			<h1><?php echo get_field('title-text' ); ?></h1>
+		</div>
+		<?php the_post(); ?>
+		<?php the_content(); ?>
+	</section>
 	<section class="reviews box-1">
-		<div class="container">
-			<span class="box-title">
-				Отзывы и результаты
-			</span>
+		<div class="container">			
 			<nav class="reviews__nav">
-				<ul>
-					<li>
-						<a href="<?php the_field('t_reviews'); ?>">благодарственные письма</a>
-					</li>
-					<li>
-						<a class="active_link">Видео отзывы</a>
-					</li>
-					<li><a href="<?php the_field('vk_reviews'); ?>">Отзывы с ВК</a></li>
-				</ul>
+				<?php
+					wp_nav_menu( array(
+						'theme_location' => 'menu-2',
+						'menu_id'        => 'reviews-menu',
+					) );
+				?>
 			</nav>
 		</div>
 	</section>

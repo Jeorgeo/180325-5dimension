@@ -34,8 +34,12 @@ $news = get_posts(
 
 <main class="content-area">
 	<section class="blog box-1">
+		<img src="<?php echo get_field('title-image' ); ?>" alt="5Dimansion - Университет физики сознания <?php echo get_field('title-text' ); ?>">
+		<div class="title-text">
+			<h1><?php echo get_field('title-text' ); ?></h1>
+		</div>
 		<?php the_post(); ?>
-		<?php the_content(); ?>
+		<?php the_content(); ?>	
 	</section>
 	<section class="blog box-2">
 		<div class="container">
@@ -54,7 +58,19 @@ $news = get_posts(
 				<div class="cols col-7 col-12-md">
 					<h4 class="small-title"><?php echo $obj->post_title; ?></h4>
 					<?php echo get_field('blog-description', $obj->ID); ?>
-					<a class="books__btn"href="<?php echo get_field('blog-link', $obj->ID); ?>" target="_blank" download>Скачать</a>
+					<?php
+						$blogLink = get_field('blog-link', $obj->ID);
+
+						if ($blogLink) {
+					?>
+						<a class="books__btn"href="<?php echo get_field('blog-link', $obj->ID); ?>" target="_blank" download>Скачать</a>
+					<?php
+						} else {
+							echo get_field('blog-сlink', $obj->ID);
+						}
+
+					?>
+
 				</div>
 			</figure>
 			<?php

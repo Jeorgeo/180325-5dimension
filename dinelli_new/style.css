@@ -1003,125 +1003,40 @@ label.cloud-form__сonsent {
 }
 
 /*--------------------------------------------------------------
-# Custom class
---------------------------------------------------------------*/
-
-.page-scroll-buttons button.one-page-up {
-  background-image: url("img/dn_arrow-up.svg");
-  background-color: rgba(232, 61, 37, 0.5);
-}
-
-.page-scroll-buttons button.one-page-down {
-  background-image: url("img/dn_arrow-down.svg");
-  background-color: rgba(232, 61, 37, 0.5);
-}
-
-.navigation.post-navigation {
-  display: none;
-}
-
-.review_vk_ava img {
-  border-radius: 50%;
-}
-
-.review_vk_date {
-  display: none;
-}
-
-.main.box-1 {
-  padding: 5em 0 1em 0;
-  background: #030303 url("img/5d_bg_n.jpg") no-repeat 100% 0%;
-  background-size: contain;
-  color: #ffffff;
-}
-
-.main.box-1 h1 {
-  font-family: 'PFSquareSansPro-Bold', 'Arial', sans-serif;
-  font-size: 2.8em;
-  line-height: 1em;
-}
-
-.main.box-1 p {
-  font-family: 'PFSquareSansPro-Regular', 'Arial', sans-serif;
-  font-size: 1.4em;
-  line-height: 0.9em;
-  margin: 0.5em 0;
-}
-
-.mosaicflow__column {
-  float: left;
-}
-
-.mosaicflow__item a {
-  position: relative;
-  display: block;
-  width: 100;
-}
-
-.mosaicflow__item .mosaicflow__shadow {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  padding: 0.5em;
-  color: #fafafa;
-  background-color: rgba(0, 14, 39, 0.7);
-  box-sizing: border-box;
-  animation-name: hide-popup;
-  animation-duration: 0.5s;
-  opacity: 0;
-}
-
-.mosaicflow__item a:hover .mosaicflow__shadow {
-  animation-name: show-popup;
-  animation-duration: 0.5s;
-  opacity: 1;
-}
-
-.mosaicflow__item img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.slick-slide {
-  position: relative;
-  max-height: 150px;
-  max-width: 300px;
-  margin: 0 2em;
-  overflow: hidden;
-}
-
-.slick-slide .reviews-photo_mantle {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  padding: 1em;
-  background-color: rgba(0, 14, 39, 0.7);
-  color: #ffffff;
-  box-sizing: border-box;
-}
-
-.slick-slide img {
-  animation-name: deflate-r;
-  animation-duration: 1s;
-  max-width: 100%;
-}
-
-.slick-slide:hover img {
-  animation-name: swell-r;
-  animation-duration: 1s;
-  max-width: 110%;
-}
-
-
-/*--------------------------------------------------------------
 # Content
   ## blog
 --------------------------------------------------------------*/
+
+.blog.box-1 {
+  position: relative;
+  width: 100%;
+  background-color: #000e27;
+}
+
+.blog.box-1 .title-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 920px;
+  height: 100%;
+}
+
+.blog.box-1 img {
+  margin: 0;
+}
+
+.blog.box-1 .title-text h1 {
+  color: #ffffff;
+  font-size: 2em;
+}
+
+.blog.box-2 {
+  padding: 1em 0 1.5em;
+}
 
 .vlog.box-2 .container {
   display: flex;
@@ -1134,6 +1049,16 @@ label.cloud-form__сonsent {
   position: relative;
   display: block;
   width: 100%;
+}
+
+.reviews__nav {
+  margin-top: 1em;
+}
+
+.reviews__nav .current_page_item a {
+  color: #e93a1d;
+  border: none;
+  cursor: none;
 }
 
 .vlog_bg-play {
@@ -1192,10 +1117,6 @@ label.cloud-form__сonsent {
   animation-name: show-popup;
   animation-duration: 0.5s;
   opacity: 1;
-}
-
-.reviews-video {
-  padding: 1em 0;
 }
 
 .news-slider {
@@ -1325,6 +1246,121 @@ label.cloud-form__сonsent {
   opacity: 1;
 }
 
+/*--------------------------------------------------------------
+# Custom class
+--------------------------------------------------------------*/
+
+.page-scroll-buttons button.one-page-up {
+  background-image: url("img/dn_arrow-up.svg");
+  background-color: rgba(232, 61, 37, 0.5);
+}
+
+.page-scroll-buttons button.one-page-down {
+  background-image: url("img/dn_arrow-down.svg");
+  background-color: rgba(232, 61, 37, 0.5);
+}
+
+.navigation.post-navigation {
+  display: none;
+}
+
+.review_vk_ava img {
+  border-radius: 50%;
+}
+
+.review_vk_date {
+  display: none;
+}
+
+.main.box-1 {
+  padding: 5em 0 1em 0;
+  background: #030303 url("img/5d_bg_n.jpg") no-repeat 100% 0%;
+  background-size: contain;
+  color: #ffffff;
+}
+
+.main.box-1 h1 {
+  font-family: 'PFSquareSansPro-Bold', 'Arial', sans-serif;
+  font-size: 2.8em;
+  line-height: 1em;
+}
+
+.main.box-1 p {
+  font-family: 'PFSquareSansPro-Regular', 'Arial', sans-serif;
+  font-size: 1.4em;
+  line-height: 0.9em;
+  margin: 0.5em 0;
+}
+
+.mosaicflow__column {
+  float: left;
+}
+
+.mosaicflow__item a {
+  position: relative;
+  display: block;
+  width: 100;
+}
+
+.mosaicflow__item .mosaicflow__shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0.5em;
+  color: #fafafa;
+  background-color: rgba(0, 14, 39, 0.7);
+  box-sizing: border-box;
+  animation-name: hide-popup;
+  animation-duration: 0.5s;
+  opacity: 0;
+}
+
+.mosaicflow__item a:hover .mosaicflow__shadow {
+  animation-name: show-popup;
+  animation-duration: 0.5s;
+  opacity: 1;
+}
+
+.mosaicflow__item img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.slick-slide {
+  position: relative;
+  max-height: 150px;
+  max-width: 300px;
+  margin: 0 2em;
+  overflow: hidden;
+}
+
+.slick-slide .reviews-photo_mantle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 1em;
+  background-color: rgba(0, 14, 39, 0.7);
+  color: #ffffff;
+  box-sizing: border-box;
+}
+
+.slick-slide img {
+  animation-name: deflate-r;
+  animation-duration: 1s;
+  max-width: 100%;
+}
+
+.slick-slide:hover img {
+  animation-name: swell-r;
+  animation-duration: 1s;
+  max-width: 110%;
+}
+
 /*-------------------tablet 768px-----------------------*/
 
 @media screen and (min-width: 768px) {
@@ -1405,6 +1441,10 @@ label.cloud-form__сonsent {
   # Content
     ## blog
   --------------------------------------------------------------*/
+
+  .blog.box-1 .title-text h1 {
+    font-size: 3em;
+  }
 
   .blog a {
     display: block;
@@ -1559,6 +1599,10 @@ label.cloud-form__сonsent {
     max-height: 100%;
   }
 
+  .blog.box-2 {
+    padding: 2em 0 2.5em;
+  }
+
   .blog__box-content {
     margin-top: 2em;
   }
@@ -1681,6 +1725,11 @@ label.cloud-form__сonsent {
 }
 
 @media screen and (min-width: 1360px) {
+
+  .blog.box-1 .title-text h1 {
+    font-size: 4em;
+  }
+
   .box-content {
     font-size: 0.95em;
     padding: 1em 0;

@@ -34,8 +34,10 @@ $news = get_posts(
 
 <main class="content-area">
 	<section class="blog box-1">
-		<?php the_post(); ?>
-		<?php the_content(); ?>
+		<img src="<?php echo get_field('title-image' ); ?>" alt="5Dimansion - Университет физики сознания <?php echo get_field('title-text' ); ?>">
+		<div class="title-text">
+			<h1><?php echo get_field('title-text' ); ?></h1>
+		</div>	
 	</section>
 	<section class="blog vlog box-2">
 		<div class="container">

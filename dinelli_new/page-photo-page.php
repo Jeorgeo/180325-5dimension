@@ -35,6 +35,14 @@ get_header(); ?>
 
 
 <main class="content-area photo">
+  <section class="blog box-1">
+		<img src="<?php echo get_field('title-image' ); ?>" alt="5Dimansion - Университет физики сознания <?php echo get_field('title-text' ); ?>">
+		<div class="title-text">
+			<h1><?php echo get_field('title-text' ); ?></h1>
+		</div>
+		<?php the_post(); ?>
+		<?php the_content(); ?>
+	</section>
 	<div class="clearfix mosaicflow">
 		<?php
 		foreach ($photo as $obj) {
@@ -60,7 +68,7 @@ get_header(); ?>
 	</div>
 </main>
 
-<script src="<?php bloginfo('template_url'); ?>/js/jquery.mosaicflow.min.js"></script>
+
 
 <?php
 get_footer();
