@@ -33,10 +33,16 @@ $news = get_posts(
 ?>
 
 <main class="content-area main-events">
+	<section class="blog box-1">
+		<img src="<?php echo get_field('title-image' ); ?>" alt="5Dimansion - Университет физики сознания <?php echo get_field('title-text' ); ?>">
+		<div class="title-text">
+			<h1><?php echo get_field('title-text' ); ?></h1>
+		</div>
+	</section>
 	<section class="events box-1">
 		<div class="container">
 			<h1>Мероприятия</h1>
-		</div>		
+		</div>
 	</section>
 	<section class="events box-2">
 		<div class="container">

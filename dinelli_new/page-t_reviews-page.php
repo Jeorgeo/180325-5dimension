@@ -41,7 +41,7 @@ $news = get_posts(
 		<?php the_content(); ?>
 	</section>
 	<section class="reviews box-1">
-		<div class="container">			
+		<div class="container">
 			<nav class="reviews__nav">
 				<?php
 					wp_nav_menu( array(
@@ -52,7 +52,7 @@ $news = get_posts(
 			</nav>
 		</div>
 	</section>
-	<section class="reviews box-2">
+	<section class="service box-2 blog">
 		<div class="container">
 			<div class="box-content">
 				<?php
@@ -61,26 +61,26 @@ $news = get_posts(
 								continue;
 						}
 				 ?>
-					<article>
+				<div class="cols col-3 col-md-6">
+					<a class="service__card" href="/t_reviews-page/<?php echo $obj->post_name; ?>">
+						<figure>
+							<img src="<?php echo get_field('reviews-image',$obj->ID); ?>" alt="<?php echo $obj->post_title; ?>">
+						</figure>
 						<h4 class="small-title">
 							<?php echo $obj->post_title; ?>
 						</h4>
-						<figure class="reviews-photo">
-							<a href="/t_reviews-page/<?php echo $obj->post_name; ?>" target="_blank">
-								<div class="reviews-photo_mantle"></div>
-								<img src="<?php echo get_field('reviews-image',$obj->ID); ?>" alt="<?php echo $obj->post_title; ?>">
-							</a>
-						</figure>
-						<div class="reviews-text">
+						<p>
 							<?php echo get_field('reviews-description', $obj->ID); ?>
-							<a href="<?php echo $obj->post_name; ?> " target="_blank">Читать далее...</a>
-						</div>
-					</article>
-				<?php } ?>
+						</p>
+					</a>
+
+				</div>
+
+				<?php
+					}
+				 ?>
+
 			</div>
-			<!-- для пагинации
-			<button class="reviews-next" type="button" name="button">Показать ещё</button>
-			!-->
 		</div>
 	</section>
 

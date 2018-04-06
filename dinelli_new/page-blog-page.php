@@ -41,29 +41,29 @@ $news = get_posts(
 		<?php the_post(); ?>
 		<?php the_content(); ?>
 	</section>
-	<section class="blog box-2">
+	<section class="service box-2 blog">
 		<div class="container">
+			<div class="box-content">
 			<?php
 				foreach ($news as $obj) {
 					if($obj->post_name == 'archive'){
 							continue;
 					}
 			 ?>
-			<figure class="blog__box-content clearfix">
-				<div class="cols col-5 col-4-md">
-					<a href="/blog/<?php echo $obj->post_name; ?>">
-						<img src="<?php echo get_field('blog-image',$obj->ID); ?>" alt="">
+				<div class="cols col-3 col-md-6">
+					<a class="service__card" href="/vlog/<?php echo $obj->post_name; ?>" target="_blank">
+						<figure>							
+							<img src="<?php echo get_field('blog-image',$obj->ID); ?>" alt="">
+						</figure>
+						<h4 class="small-title"><?php echo $obj->post_title; ?></h4>
+						<?php echo get_field('blog-description', $obj->ID); ?>
 					</a>
+
 				</div>
-				<div class="cols col-5 col-12-md">
-					<h4 class="small-title"><?php echo $obj->post_title; ?></h4>
-					<?php echo get_field('blog-description', $obj->ID); ?>
-					<a href="/blog/<?php echo $obj->post_name; ?>">Читать далее...</a>
-				</div>
-			</figure>
 			<?php
 }
 			 ?>
+		 </div>
 		</div>
 	</section>
 

@@ -15,6 +15,12 @@
 get_header(); ?>
 
 		<main id="main" class="content-area">
+			<section class="blog box-1">
+				<img src="<?php echo get_field('title-image' ); ?>" alt="5Dimansion - Университет физики сознания <?php echo get_field('title-text' ); ?>">
+				<div class="title-text">
+					<h1><?php echo get_field('title-text' ); ?></h1>
+				</div>
+			</section>
 
 			<?php the_post(); ?>
 			<?php the_content(); ?>

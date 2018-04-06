@@ -37,29 +37,33 @@ $news = get_posts(
 		<img src="<?php echo get_field('title-image' ); ?>" alt="5Dimansion - Университет физики сознания <?php echo get_field('title-text' ); ?>">
 		<div class="title-text">
 			<h1><?php echo get_field('title-text' ); ?></h1>
-		</div>	
+		</div>
 	</section>
-	<section class="blog vlog box-2">
+	<section class="service box-2 vlog">
 		<div class="container">
-
+			<div class="box-content">
 			<?php
 				foreach ($news as $obj) {
 					if($obj->post_name == 'archive'){
 							continue;
 					}
 			 ?>
-				<figure class="cols col-3 col-6-md">
-					<a href="/vlog/<?php echo $obj->post_name; ?>" target="_blank">
-						<div class="vlog_bg-play">
-						</div>
-						<img src="<?php echo get_field('blog-image',$obj->ID); ?>" alt="">
+				<div class="cols col-3 col-md-6">
+					<a class="service__card" href="/vlog/<?php echo $obj->post_name; ?>" target="_blank">
+						<figure>
+							<div class="vlog_bg-play">
+							</div>
+							<img src="<?php echo get_field('blog-image',$obj->ID); ?>" alt="">
+						</figure>
+						<h4 class="small-title"><?php echo $obj->post_title; ?></h4>
+						<?php echo get_field('blog-description', $obj->ID); ?>
 					</a>
-					<h4 class="small-title"><?php echo $obj->post_title; ?></h4>
-					<?php echo get_field('blog-description', $obj->ID); ?>
-				</figure>
+
+				</div>
 			<?php
-}
+				}
 			 ?>
+		 </div>
 		</div>
 	</section>
 

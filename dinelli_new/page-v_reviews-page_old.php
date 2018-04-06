@@ -41,7 +41,7 @@ $news = get_posts(
 		<?php the_content(); ?>
 	</section>
 	<section class="reviews box-1">
-		<div class="container">
+		<div class="container">			
 			<nav class="reviews__nav">
 				<?php
 					wp_nav_menu( array(
@@ -52,31 +52,32 @@ $news = get_posts(
 			</nav>
 		</div>
 	</section>
-	<section class="service box-2 vlog">
+	<section class="reviews blog box-2">
 		<div class="container">
-			<div class="box-content">
 			<?php
 				foreach ($news as $obj) {
 					if($obj->post_name == 'archive'){
 							continue;
 					}
 			 ?>
-				<div class="cols col-3 col-md-6">
-					<a class="service__card" href="/v_reviews/<?php echo $obj->post_name; ?>" target="_blank">
-						<figure>
-							<?php echo get_field('reviews-image', $obj->ID); ?>
-						</figure>
-						<h4 class="small-title"><?php echo $obj->post_title; ?></h4>
-						<?php echo get_field('reviews-description', $obj->ID); ?>
-					</a>
-
+			<figure class="blog__box-content clearfix">
+				<div class="cols col-5 col-4-md">
+					<?php echo get_field('reviews-video', $obj->ID); ?>
 				</div>
-			<?php
-				}
-			 ?>
-		 </div>
+				<div class="cols col-5 col-12-md">
+					<h2 class="small-title">
+						<?php echo $obj->post_title; ?>
+					</h2>
+					<?php echo get_field('reviews-description', $obj->ID); ?>
+					<a href="<?php echo $obj->post_name; ?>">Читать далее...</a>
+				</div>
+			</figure>
+			<?php } ?>
+			<!-- для пагинации
+			<button class="reviews-next" type="button" name="button">Показать ещё</button>
+			!-->
 		</div>
-	</section>
+	</div>
 </section>
 
 </main>

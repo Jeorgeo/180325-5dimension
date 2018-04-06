@@ -51,7 +51,24 @@ $news = get_posts(
 						}
 				 ?>
 				<div class="cols col-3 col-md-6">
-					<a class="service__card" href="<?php echo get_field('service-link', $obj->ID); ?>" target="_blank">
+					<?php
+						$blogLink = get_field('service-link', $obj->ID);
+
+						if ($blogLink) {
+					?>
+
+					<a class="service__card" href="<?php echo get_field('service-link', $obj->ID); ?>">
+
+					<?php
+						} else {
+					?>
+
+					<a class="service__card" href="#" onclick="showPopup()">
+
+					<?php
+							}
+					?>
+
 						<figure>
 							<img src="<?php echo get_field('service-image',$obj->ID); ?>" alt="<?php echo $obj->post_title; ?>">
 						</figure>
@@ -60,7 +77,7 @@ $news = get_posts(
 							<span class="service__price"><?php echo get_field('service-price', $obj->ID); ?></span>
 						</p>
 					</a>
-					<a class="service__btn" href="<?php echo get_field('service-link', $obj->ID); ?>">Подробнее...</a>
+
 				</div>
 
 				<?php

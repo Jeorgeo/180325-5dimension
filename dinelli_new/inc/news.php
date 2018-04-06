@@ -1,21 +1,21 @@
 <?php
-add_action('init', 'register_post_types_photo');
-function register_post_types_photo(){
-	register_post_type('photo', array(
-		'label'  => 'photo',
+add_action('init', 'register_post_types_news');
+function register_post_types_news(){
+	register_post_type('news', array(
+		'label'  => 'news',
 		'labels' => array(
-			'name'               => 'Фото', // основное название для типа записи
-			'singular_name'      => 'Фото', // название для одной записи этого типа
-			'add_new'            => 'Добавить Фото', // для добавления новой записи
-			'add_new_item'       => 'Добавление Фото', // заголовка у вновь создаваемой записи в админ-панели.
-			'edit_item'          => 'Редактирование Фото', // для редактирования типа записи
-			'new_item'           => 'новое Фото', // текст новой записи
-			'view_item'          => 'Смотреть Фото', // для просмотра записи этого типа.
-			'search_items'       => 'Искать Фото', // для поиска по этим типам записи
+			'name'               => 'Новости', // основное название для типа записи
+			'singular_name'      => 'Новость', // название для одной записи этого типа
+			'add_new'            => 'Добавить Новость', // для добавления новой записи
+			'add_new_item'       => 'Добавление Новости', // заголовка у вновь создаваемой записи в админ-панели.
+			'edit_item'          => 'Редактирование Новости', // для редактирования типа записи
+			'new_item'           => 'новая Новость', // текст новой записи
+			'view_item'          => 'Смотреть Новость', // для просмотра записи этого типа.
+			'search_items'       => 'Искать Новость', // для поиска по этим типам записи
 			'not_found'          => 'Не найдено', // если в результате поиска ничего не было найдено
 			'not_found_in_trash' => 'Не найдено в корзине', // если не было найдено в корзине
 			'parent_item_colon'  => '', // для родителей (у древовидных типов)
-			'menu_name'          => 'Фото', // название меню
+			'menu_name'          => 'Новости', // название меню
 		),
 		'description'         => '',
 		'public'              => true,
@@ -33,7 +33,7 @@ function register_post_types_photo(){
 		//'capabilities'      => 'post', // массив дополнительных прав для этого типа записи
 		//'map_meta_cap'      => null, // Ставим true чтобы включить дефолтный обработчик специальных прав
 		'hierarchical'        => false,
-		'supports'            => array('title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'),  
+		'supports'            => array('title','editor','revisions','page-attributes','post-formats'), // 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
 		'taxonomies'          => array(),
 		'has_archive'         => true,
 		'rewrite'             => true,

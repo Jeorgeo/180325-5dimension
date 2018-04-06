@@ -601,10 +601,6 @@ main.photo {
   max-height: 180px;
 }
 
-.blog__box-content {
-  margin-top: 1em;
-}
-
 
 /*--------------------------------------------------------------
 # Header
@@ -1038,13 +1034,6 @@ label.cloud-form__сonsent {
   padding: 1em 0 1.5em;
 }
 
-.vlog.box-2 .container {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  margin-bottom: 2em;
-}
-
 .vlog.box-2 .container a {
   position: relative;
   display: block;
@@ -1063,11 +1052,11 @@ label.cloud-form__сonsent {
 
 .vlog_bg-play {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 14, 39, 0.7) url('img/pl_video.png') no-repeat 50% 50%;
+  top: 110px;
+  left: 110px;
+  width: 80px;
+  height: 80px;
+  background: url('img/5d_bg-play.png') no-repeat 50% 50%;
   background-size: cover;
   animation-name: hide-popup;
   animation-duration: 0.5s;
@@ -1158,7 +1147,7 @@ label.cloud-form__сonsent {
   text-transform: uppercase;
   letter-spacing: 1px;
   color: #000e27;
-  border: 2px solid #000e27;
+  border: 1px solid #000e27;
   box-sizing: border-box;
 }
 
@@ -1193,9 +1182,43 @@ label.cloud-form__сonsent {
 }
 
 .service__card figure {
+  position: relative;
   width: 300px;
   height: 300px;
   overflow-y: hidden;
+}
+
+.service__card figure::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 15% 2em 0 2em;
+  text-transform: uppercase;
+  text-shadow: 1px 1px #000e27;
+  box-sizing: border-box;
+  color: #fafafa;
+  background-color: rgba(0, 14, 39, 0.7);
+  animation-name: hide-popup;
+  animation-duration: 0.5s;
+  opacity: 0;
+  content: 'Узнать больше...'
+}
+
+.vlog .service__card figure::after {
+  content: 'Смотреть видео...'
+}
+
+.blog .service__card figure::after {
+  content: 'Читать далее...'
+}
+
+.service__card:hover figure::after {
+  animation-name: show-popup;
+  animation-duration: 0.5s;
+  opacity: 1;
 }
 
 .service .service__price {
@@ -1443,12 +1466,13 @@ label.cloud-form__сonsent {
   --------------------------------------------------------------*/
 
   .blog.box-1 .title-text h1 {
+    font-family: 'PFSquareSansPro-Bold', 'Arial', serif;
     font-size: 3em;
   }
 
   .blog a {
     display: block;
-    font-family: 'PFSquareSansPro-Bold' 'Arial', sans-serif;
+    font-family: 'PFSquareSansPro-Bold', 'Arial', sans-serif;
     font-size: 1.1em;
     color: #000e27;
   }
@@ -1477,14 +1501,14 @@ label.cloud-form__сonsent {
 
   .main-events {
     min-height: 100%;
-    background: #000e27 url('img/5d_bg-events.jpg') no-repeat 235px 0;
+    background: #000e27 url('img/5d_bg-events.jpg') no-repeat 0 25%;
     background-size: cover;
     background-attachment: fixed;
   }
 
   .events.box-1 {
     margin-bottom: 0;
-    background-color: #fafafa;
+    background-color: rgba(255, 255, 255, 0.3);
   }
 
   .events.box-1 h1 {
@@ -1501,9 +1525,21 @@ label.cloud-form__сonsent {
   }
 
   .events__box-content {
+    position: relative;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+  }
+
+  .events__box-content::after {
+    position: absolute;
+    top: 0;
+    left: 2%;
+    display: block;
+    width: 81%;
+    height: 100%;
+    border-bottom: 1px solid #fafafa;
+    content: '';
   }
 
   .events__box-content .cols.col-12-md {
@@ -1511,18 +1547,28 @@ label.cloud-form__сonsent {
     align-items: center;
   }
 
+  .events__box-content .cols.col-12-md h3 {
+    font-size: 1.4em;
+  }
+
   .events__box-content .cols.col-4-md {
     width: 35%;
     margin: 0;
     padding: 1.5em;
     color: #000e27;
-    background-color: #fafafa;
+    background-color: rgba(255, 255, 255, 0.3);
   }
 
   .events__btn {
     width: 150px;
+    font-weight: bold;
     color: #fafafa;
-    border: 2px solid #fafafa;
+    border: 1px solid #fafafa;
+    box-sizing: content-box;
+  }
+
+  .events__btn:hover {
+    color: #e93a1d;
   }
 
   .service .box-content {
@@ -1530,6 +1576,7 @@ label.cloud-form__сonsent {
     flex-wrap: wrap;
     justify-content: space-around;
   }
+
 
 }
 
@@ -1603,10 +1650,6 @@ label.cloud-form__сonsent {
     padding: 2em 0 2.5em;
   }
 
-  .blog__box-content {
-    margin-top: 2em;
-  }
-
   .news-slider {
     margin-top: 2em;
     margin-bottom: 3em;
@@ -1641,7 +1684,7 @@ label.cloud-form__сonsent {
 @media screen and (min-width: 1280px) {
 
   .container {
-    max-width: 1170px;
+    max-width: 1600px;
   }
 
   .cols.col-1 {

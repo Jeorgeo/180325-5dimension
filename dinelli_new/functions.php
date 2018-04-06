@@ -306,6 +306,16 @@ require get_template_directory() . '/tgm/dinelli_tgm.php';
 require get_template_directory() . '/inc/reviews_text.php';
 
 /**
+ * Custom reviews_text.
+ */
+require get_template_directory() . '/inc/reviews_d.php';
+
+/**
+ * Custom reviews_text.
+ */
+require get_template_directory() . '/inc/reviews_c.php';
+
+/**
  * Custom reviews_vk.
  */
 require get_template_directory() . '/inc/reviews_video.php';

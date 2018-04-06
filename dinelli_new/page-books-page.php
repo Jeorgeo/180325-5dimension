@@ -32,30 +32,42 @@ $news = get_posts(
 );
 ?>
 
-<main class="content-area">
+<main class="content-area books">
 	<section class="blog box-1">
 		<img src="<?php echo get_field('title-image' ); ?>" alt="5Dimansion - Университет физики сознания <?php echo get_field('title-text' ); ?>">
 		<div class="title-text">
 			<h1><?php echo get_field('title-text' ); ?></h1>
 		</div>
 		<?php the_post(); ?>
-		<?php the_content(); ?>	
+		<?php the_content(); ?>
 	</section>
-	<section class="blog box-2">
+	<section class="blog service box-2">
 		<div class="container">
+			<div class="box-content">
 			<?php
 				foreach ($news as $obj) {
 					if($obj->post_name == 'archive'){
 							continue;
 					}
 			 ?>
-			<figure class="blog__box-content clearfix">
-				<div class="cols col-3 col-4-md">
-					<a href="/blog/<?php echo $obj->post_name; ?>">
+			<article class="cols col-3 col-md-6">
+				<?php
+					$blogLink = get_field('blog-link', $obj->ID);
+
+					if ($blogLink) {
+				?>
+				<a class="service__card" href="<?php echo get_field('blog-clink', $obj->ID); ?>">
+				<?php
+					} else {
+				?>
+				<a class="service__card" href="<?php echo get_field('blog-link', $obj->ID); ?>" target="_blank">
+				<?php
+					}
+
+				?>
+					<figure>
 						<img src="<?php echo get_field('blog-image',$obj->ID); ?>" alt="">
-					</a>
-				</div>
-				<div class="cols col-7 col-12-md">
+					</figure>
 					<h4 class="small-title"><?php echo $obj->post_title; ?></h4>
 					<?php echo get_field('blog-description', $obj->ID); ?>
 					<?php
@@ -63,19 +75,19 @@ $news = get_posts(
 
 						if ($blogLink) {
 					?>
-						<a class="books__btn"href="<?php echo get_field('blog-link', $obj->ID); ?>" target="_blank" download>Скачать</a>
+
 					<?php
 						} else {
 							echo get_field('blog-сlink', $obj->ID);
 						}
 
 					?>
-
-				</div>
-			</figure>
+				</a>
+			</article>
 			<?php
 }
 			 ?>
+		 </div>
 		</div>
 	</section>
 
