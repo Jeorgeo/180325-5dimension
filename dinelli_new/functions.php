@@ -258,6 +258,10 @@ function dinelli_scripts() {
 
 	wp_enqueue_style( 'dinelli-style', get_stylesheet_uri() );
 
+	wp_enqueue_script('dinelli-jquery', $dineli_url . '/js/jquery-3.3.1.min.js', array(), '20151215', true );
+
+	wp_enqueue_script('dinelli-migrate', $dineli_url . '/js/jquery-migrate-3.0.1.min.js', array(), '20151215', true );
+
 	wp_enqueue_script('slick-js', $dineli_url . '/slick/slick.min.js', array(), '20151215', true );
 
 	wp_enqueue_script('main', $dineli_url . '/js/main.js', array(), '1', true );

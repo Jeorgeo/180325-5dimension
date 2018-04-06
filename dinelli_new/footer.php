@@ -95,9 +95,6 @@
 		</div>
 	</div>
 
-	<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-	<script src="http://code.jquery.com/jquery-migrate-3.0.1.min.js" integrity="sha256-F0O1TmEa4I8N24nY0bya59eP6svWcshqX1uzwaWC4F4=" crossorigin="anonymous"></script>
-	<script src="<?php bloginfo('template_url'); ?>/js/jquery.mosaicflow.min.js"></script>
 	<?php wp_footer(); ?>
 
 </body>

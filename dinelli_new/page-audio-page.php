@@ -41,7 +41,7 @@ $news = get_posts(
 		<?php the_post(); ?>
 		<?php the_content(); ?>
 	</section>
-	<section class="service box-2">
+	<section class="service blog box-2">
 		<div class="container">
 			<div class="box-content">
 			<?php

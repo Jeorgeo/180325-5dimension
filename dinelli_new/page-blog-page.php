@@ -51,8 +51,8 @@ $news = get_posts(
 					}
 			 ?>
 				<div class="cols col-3 col-md-6">
-					<a class="service__card" href="/vlog/<?php echo $obj->post_name; ?>" target="_blank">
-						<figure>							
+					<a class="service__card" href="<?php echo $obj->post_name; ?>">
+						<figure>
 							<img src="<?php echo get_field('blog-image',$obj->ID); ?>" alt="">
 						</figure>
 						<h4 class="small-title"><?php echo $obj->post_title; ?></h4>

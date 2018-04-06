@@ -39,7 +39,7 @@ $news = get_posts(
 			<h1><?php echo get_field('title-text' ); ?></h1>
 		</div>
 	</section>
-	<section class="service box-2 vlog">
+	<section class="service blog box-2 vlog">
 		<div class="container">
 			<div class="box-content">
 			<?php

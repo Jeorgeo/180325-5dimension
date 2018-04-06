@@ -64,7 +64,7 @@ $news = get_posts(
 				<div class="cols col-3 col-md-6">
 					<a class="service__card" href="/v_reviews/<?php echo $obj->post_name; ?>" target="_blank">
 						<figure>
-							<?php echo get_field('reviews-image', $obj->ID); ?>
+							<img src="<?php echo get_field('reviews-image', $obj->ID); ?>" alt="<?php echo $obj->post_title; ?>">
 						</figure>
 						<h4 class="small-title"><?php echo $obj->post_title; ?></h4>
 						<?php echo get_field('reviews-description', $obj->ID); ?>

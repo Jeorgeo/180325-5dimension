@@ -43,8 +43,8 @@ get_header(); ?>
 		<?php the_post(); ?>
 		<?php the_content(); ?>
 	</section>
-  <section class="blog box-2">
-
+  <section>
+    <div class="clearfix mosaicflow">
   		<?php
   		foreach ($photo as $obj) {
   				if($obj->post_name == 'archive'){
@@ -52,18 +52,21 @@ get_header(); ?>
   				}
 
   		?>
-    <a data-caption-title="<?php echo get_field('title-photo',$obj->ID); ?>" data-caption-desc="<?php echo get_field('description-photo',$obj->ID); ?>" class="foobox" href="<?php echo get_field('img-photo',$obj->ID); ?>" rel="gallery" >
-			<?php echo get_the_post_thumbnail( $obj->ID, 'thumbnail'); ?>
-      <div class="shadow-image">
-        <h4><?php echo get_field('title-photo',$obj->ID); ?></h4>
-      </div>
-    </a>
-
+  	  <div class="mosaicflow__item">
+  			<a href="<?php echo get_field('link-photo',$obj->ID); ?>">
+  				<img src="<?php echo get_field('img-photo',$obj->ID); ?>">
+  				<div class="mosaicflow__shadow">
+  					<h4><?php echo get_field('title-photo',$obj->ID); ?></h4>
+  			    <p><?php echo get_field('description-photo',$obj->ID); ?></p>
+  				</div>
+  			</a>
+  	  </div>
 
   		<?php
   			};
   		 ?>
 
+  	</div>
   </section>
 
 </main>
