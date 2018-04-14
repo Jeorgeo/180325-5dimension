@@ -453,7 +453,7 @@ img {
 --------------------------------------------------------------*/
 
 main {
-  min-height: 450px;
+  min-height: 345px;
 }
 
 .box-content {
@@ -525,8 +525,9 @@ main.photo {
 
 .photo .box-2 {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 2em 0;
 }
 
@@ -534,7 +535,7 @@ main.photo {
   position: relative;
   display: block;
   width: 300px;
-  height: 300px;
+  height: auto;
   margin: 1em;
 }
 
@@ -678,6 +679,7 @@ main.photo {
   margin: 3px;
   background-color: transparent;
   border: none;
+  outline: none;
 }
 
 .header-menu-toggle span {
@@ -1051,7 +1053,7 @@ label.cloud-form__сonsent {
 .blog.box-1 {
   position: relative;
   width: 100%;
-  background-color: #000e27;
+  background-color: #000000;
 }
 
 .blog.box-1 .title-text {
@@ -1062,7 +1064,7 @@ label.cloud-form__сonsent {
   justify-content: center;
   align-items: center;
   width: 100%;
-  max-width: 920px;
+  max-width: 1200px;
   height: 100%;
 }
 
@@ -1553,7 +1555,7 @@ label.cloud-form__сonsent {
 
   .events.box-1 {
     margin-bottom: 0;
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.9);
   }
 
   .events.box-1 h1 {
@@ -1622,7 +1624,22 @@ label.cloud-form__сonsent {
     justify-content: space-around;
   }
 
+  .photo .box-2 {
+    justify-content: space-between;
+  }
 
+  .photo a {
+    width: auto;
+    max-width: 300px;
+    height: 300px;
+    overflow-x: hidden;
+  }
+
+  .photo a img {
+    height: 300px;
+    max-width: none;
+    width: auto;
+  }
 }
 
 @media screen and (min-width: 960px) {
@@ -1644,6 +1661,7 @@ label.cloud-form__сonsent {
 
   .footer {
     padding-left: 235px;
+    padding-top: 2em;
   }
 
   .footer .row {
@@ -1666,6 +1684,11 @@ label.cloud-form__сonsent {
     background-size: 100%;
     background-attachment: fixed;
     box-sizing: border-box;
+  }
+
+  .reviews__nav {
+    margin-top: 3em;
+    margin-bottom: 1em;
   }
 
   .reviews__nav ul {
@@ -1698,6 +1721,11 @@ label.cloud-form__сonsent {
   .news-slider {
     margin-top: 2em;
     margin-bottom: 3em;
+  }
+
+  .content-area article {
+    margin: 1em 0;
+    padding: 1em 0;
   }
 }
 
@@ -1831,6 +1859,15 @@ label.cloud-form__сonsent {
   .box-content .small-title {
     font-size: 1.25em;
   }
+
+  .photo a {
+    max-width: 330px;
+    height: 330px;
+  }
+
+  .photo a img {
+    height: 330px;
+  }
 }
 
 @media screen and (min-width: 1440px) {
@@ -1867,4 +1904,7 @@ label.cloud-form__сonsent {
   .blog .cols.col-12-md {
     width: 70%;
   }
+}
+
+@media screen and (min-width: 1900px) {
 }

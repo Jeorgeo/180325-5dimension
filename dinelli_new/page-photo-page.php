@@ -52,8 +52,8 @@ get_header(); ?>
   				}
 
   		?>
-    <a data-caption-title="<?php echo get_field('title-photo',$obj->ID); ?>" data-caption-desc="<?php echo get_field('description-photo',$obj->ID); ?>" class="foobox" href="<?php echo get_field('img-photo',$obj->ID); ?>" rel="gallery" >
-			<?php echo get_the_post_thumbnail( $obj->ID, 'thumbnail'); ?>
+    <a class="foobox" data-caption-title="<?php echo get_field('title-photo',$obj->ID); ?>" data-caption-desc="<?php echo get_field('description-photo',$obj->ID); ?>" href="<?php echo get_field('img-photo',$obj->ID); ?>" rel="gallery" >
+			<?php echo get_the_post_thumbnail( $obj->ID, array(330, 330)); ?>
       <div class="shadow-image">
         <h4><?php echo get_field('title-photo',$obj->ID); ?></h4>
       </div>
