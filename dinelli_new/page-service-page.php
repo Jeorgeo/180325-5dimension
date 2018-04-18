@@ -41,7 +41,7 @@ $news = get_posts(
 		<?php the_post(); ?>
 		<?php the_content(); ?>
 	</section>
-	<section class="service box-2">
+	<section class="service blog box-2">
 		<div class="container">
 			<div class="box-content">
 				<?php
@@ -72,6 +72,9 @@ $news = get_posts(
 						<figure>
 							<img src="<?php echo get_field('service-image',$obj->ID); ?>" alt="<?php echo $obj->post_title; ?>">
 						</figure>
+						<h3>
+							<?php echo $obj->post_title; ?>
+						</h3>
 						<p>
 							<?php echo get_field('service-description', $obj->ID); ?>
 							<span class="service__price"><?php echo get_field('service-price', $obj->ID); ?></span>

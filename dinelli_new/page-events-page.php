@@ -41,7 +41,10 @@ $news = get_posts(
 	</section>
 	<section class="events box-1">
 		<div class="container">
-			<h1>Мероприятия</h1>
+			<h2>
+				<?php the_post(); ?>
+				<?php the_content(); ?>
+			</h2>
 		</div>
 	</section>
 	<section class="events box-2">
@@ -64,6 +67,12 @@ $news = get_posts(
 			<?php
 }
 			 ?>
+			 <figure class="events__box-content">
+				 <div class="cols col-3 col-4-md">
+					 <h3 class="events__stub"></h3>
+				 </div>
+
+			 </figure>
 		</div>
 	</section>
 
