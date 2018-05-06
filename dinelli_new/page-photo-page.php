@@ -161,5 +161,11 @@ get_header(); ?>
 
 <?php wp_footer(); ?>
 
+<script type="text/javascript">
+ jQuery(function($){
+ $("#phone").mask("+7(999) 999-99-99");
+ });
+ </script>
+
 </body>
 </html>

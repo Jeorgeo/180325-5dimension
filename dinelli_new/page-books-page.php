@@ -60,7 +60,7 @@ $news = get_posts(
 				<?php
 					} else {
 				?>
-				<a class="service__card" href="<?php echo get_field('blog-link', $obj->ID); ?>" target="_blank">
+				<a class="service__card" href="<?php echo $obj->post_name; ?>">
 				<?php
 					}
 
@@ -74,13 +74,15 @@ $news = get_posts(
 						$blogLink = get_field('blog-link', $obj->ID);
 
 						if ($blogLink) {
+							echo get_field('blog-link', $obj->ID);
 					?>
 
 					<?php
 						} else {
-							echo get_field('blog-сlink', $obj->ID);
+					?>
+						<a class="books__btn" href="<?php echo $obj->post_name; ?>">Подробнее</a>
+					<?php
 						}
-
 					?>
 				</a>
 			</article>

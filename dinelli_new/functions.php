@@ -266,6 +266,8 @@ function dinelli_scripts() {
 
 	wp_enqueue_script('slick-js', $dineli_url . '/slick/slick.min.js', array(), '20151215', true );
 
+	wp_enqueue_script('mask-js', $dineli_url . '/js/maskinput.js', array(), '20151215', true );
+
 	wp_enqueue_script('main', $dineli_url . '/js/main.js', array(), '1', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

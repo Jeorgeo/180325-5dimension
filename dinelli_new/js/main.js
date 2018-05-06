@@ -94,14 +94,14 @@ winPopup.addEventListener("click", function(event) {
 
 $(document).ready(function() {
 
-  $('.news-slider').slick({
-  dots: true,
-  infinite: true,
-  speed: 300,
-  slidesToShow: 1,
-  centerMode: true,
-  variableWidth: true
-});
+  //$('.news-slider').slick({
+  //dots: true,
+  //infinite: true,
+  //speed: 300,
+  //slidesToShow: 1,
+  //centerMode: true,
+  //variableWidth: true
+//});
 
 	//E-mail Ajax Send
 
@@ -109,7 +109,7 @@ $(document).ready(function() {
 		var th = $(this);
 		$.ajax({
 			type: "POST",
-			url: "mail.php", //Change
+			url: "https://5dimansion.ru/mail.php", //Change
 			data: th.serialize()
 		}).done(function() {
 			showThank();
