@@ -49,11 +49,11 @@ $news = get_posts(
 					}
 			 ?>
 				<div class="cols col-3 col-md-6">
-					<a class="service__card" href="/vlog/<?php echo $obj->post_name; ?>" target="_blank">
+					<a class="service__card" href="/vlog/<?php echo $obj->post_name; ?>">
 						<figure>
 							<div class="vlog_bg-play">
 							</div>
-							<img src="<?php echo get_field('blog-image',$obj->ID); ?>" alt="">
+							<img src="<?php echo get_field('blog-image',$obj->ID); ?>">
 						</figure>
 						<h4 class="small-title"><?php echo $obj->post_title; ?></h4>
 						<?php echo get_field('blog-description', $obj->ID); ?>

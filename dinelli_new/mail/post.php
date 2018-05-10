@@ -3,66 +3,40 @@
 
 header("Content-Type: text/html; charset=utf-8");
 
-$adminemail="jeorgeo@list.ru";  // e-mail админа
+$project_name = trim($_POST["project_name"]);
+$adminemail  = trim($_POST["admin_email"]);
+$form_subject = trim($_POST["form_subject"]);  // e-mail админа
 
 
 $date=date("d.m.y"); // число.месяц.год
 
 $time=date("H:i"); // часы:минуты:секунды
 
-$backurl="http://yush25um.bget.ru";  // На какую страничку переходит после отправки письма
-
 //---------------------------------------------------------------------- //
-
 
 
 // Принимаем данные с формы
 
-$name=$_POST['name'];
-
-$email=$_POST['mail'];
+$name=$_POST['phone'];
 
 $msg=$_POST['message'];
 
-
-
-// Проверяем валидность e-mail
-
-if (!preg_match("|^([a-z0-9_\.\-]{1,20})@([a-z0-9\.\-]{1,20})\.([a-z]{2,4})|is",
-strtolower($email)))
-
- {
-
-  echo
-"<center>Вернитесь <a
-href='javascript:history.back(1)'><B>назад</B></a>. Вы
-указали неверные данные!";
-
-  }
-
- else
-
- {
-
-
 $msg="
 
+<p>Проект: $project_name</p>
 
-<p>Имя: $name</p>
+<p>тема: $form_subject</p>
 
-<p>E-mail: $email</p>
+<p>Телефон: $name</p>
 
 <p>сообщение: $msg</p>
-
 
 ";
 
 
-
  // Отправляем письмо админу
 
-mail("$adminemail", "$date $time Сообщение от $name", "$msg");
-
+mail("$adminemail", "$date $time Заказ звонка на $name", "$msg");
 
 
 // Сохраняем в базу данных
@@ -78,18 +52,7 @@ fwrite($f,"\n ---------------");
 fclose($f);
 
 
-
-// Выводим сообщение пользователю
-
-print "<script language='Javascript'><!--
-function reload() {location = \"$backurl\"}; setTimeout('reload()', 600);
-//--></script>
-
-$msg
-
-<p>Сообщение отправлено! Подождите, сейчас вы будете перенаправлены на главную страницу...</p>";
 exit;
 
- }
 
 ?>

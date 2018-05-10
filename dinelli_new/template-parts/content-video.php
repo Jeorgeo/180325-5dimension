@@ -29,7 +29,7 @@
 <section class="blog box-1">
   <img src="<?php echo get_field('title-image' ); ?>" alt="5Dimansion - Университет физики сознания <?php echo get_field('title-text' ); ?>">
   <div class="title-text">
-    <h1><?php echo get_field('title-text' ); ?></h1>
+    <p><?php echo get_field('title-text' ); ?></p>
   </div>
 </section>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

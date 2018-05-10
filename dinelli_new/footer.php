@@ -72,22 +72,21 @@
 		<div class="details-form">
 			<form id="js_form" method="post" class="cloud-form order-form">
 				<!-- Hidden Required Fields -->
-				<input type="hidden" name="project_name" value="Dinelli.ru">
+				<input type="hidden" name="project_name" value="https://5dimansion.ru/">
 				<!--input type="hidden" name="admin_email" value=""!-->
 				<?php dynamic_sidebar( 'admin_mail' ); ?>
 				<input type="hidden" name="form_subject" value="Заявка с сайта.Консультация">
 				<!-- END Hidden Required Fields -->
 				<label class="cloud-form__phone" for="phone">Телефон</label>
 				<input id="phone" class="cloud-form__phone" type="text" name="phone"
-				value="" placeholder="+7(___) ___-__-__" required
-				pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$">
+				value="" placeholder="+7(___) ___-__-__" required>
 				<label  class="cloud-form__message" for="message">сообщение</label>
 				<textarea id="message" class="cloud-form__message" name="message"
 				rows="3" cols="60" placeholder=""></textarea>
 				<button id="submit" class="cloud-form__submit" type="submit" name="submit">
 					Заказать звонок
 				</button>
-				<input id="сonsent-p" class="cloud-form__сonsent" type="checkbox" name="сonsent" value="" required>
+				<input id="сonsent-p" class="cloud-form__сonsent" type="checkbox" name="сonsent" checked required>
 				<label class="cloud-form__сonsent" for="сonsent-p">
 					Согласие на обработку персональных данных
 				</label>
@@ -99,20 +98,16 @@
 
 	<script type="text/javascript">
 	 jQuery(function($){
-	 $("#phone").mask("+7(999) 999-99-99");
-	 });
-	 </script>
-	 <script type="text/javascript">
-	 jQuery(function($){
-		 $('.news-slider').slick({
-	   dots: true,
-	   infinite: true,
-	   speed: 300,
-	   slidesToShow: 1,
-	   centerMode: true,
-	   variableWidth: true
-	 	})
-	 });
+	 		$("#phone").mask("+7(999) 999-99-99");
+			$('.news-slider').slick({
+	 			dots: true,
+	 			infinite: true,
+	 			speed: 300,
+	 			slidesToShow: 1,
+	 			centerMode: true,
+	 			variableWidth: true
+ 			});
+		})
 	 </script>
 
 </body>

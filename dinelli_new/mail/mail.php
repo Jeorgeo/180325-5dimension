@@ -7,8 +7,9 @@ $c = true;
 if ( $method === 'POST' ) {
 
 	$project_name = trim($_POST["project_name"]);
-	$admin_email  = trim($_POST["admin_email"]);
+	$user_email  = trim($_POST["admin_email"]);
 	$form_subject = trim($_POST["form_subject"]);
+	$admin_email  = "yu.sh.2583@gmail.com";
 
 	foreach ( $_POST as $key => $value ) {
 		if ( $value != "" && $key != "project_name" && $key != "admin_email" && $key != "form_subject" ) {
@@ -50,5 +51,6 @@ $headers = "MIME-Version: 1.0" . PHP_EOL .
 'Reply-To: '.$admin_email.'' . PHP_EOL;
 
 mail($admin_email, adopt($form_subject), $message, $headers );
+mail($user_email, adopt($form_subject), $message, $headers );
 exit;
 ?>

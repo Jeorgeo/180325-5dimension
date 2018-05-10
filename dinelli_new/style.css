@@ -1061,7 +1061,7 @@ label.cloud-form__сonsent {
   margin: 0;
 }
 
-.blog.box-1 .title-text h1 {
+.blog.box-1 .title-text p {
   color: #ffffff;
   font-size: 2em;
 }
@@ -1511,7 +1511,7 @@ label.cloud-form__сonsent {
     ## blog
   --------------------------------------------------------------*/
 
-  .blog.box-1 .title-text h1 {
+  .blog.box-1 .title-text p {
     font-family: 'PFSquareSansPro-Bold', 'Arial', serif;
     font-size: 3em;
   }
@@ -1601,6 +1601,10 @@ label.cloud-form__сonsent {
     font-size: 1.4em;
   }
 
+  .events__description p {
+    display: block;
+  }
+
   .events__box-content .cols.col-4-md {
     width: 35%;
     margin: 0;
@@ -1650,6 +1654,7 @@ label.cloud-form__сonsent {
   .footer {
     padding-left: 235px;
     padding-top: 2em;
+    box-sizing: border-box;
   }
 
   .footer .row {
@@ -1749,6 +1754,7 @@ label.cloud-form__сonsent {
 @media screen and (min-width: 1280px) {
 
   .container {
+    width: 100%;
     max-width: 1600px;
   }
 
@@ -1848,7 +1854,7 @@ label.cloud-form__сonsent {
 
 @media screen and (min-width: 1360px) {
 
-  .blog.box-1 .title-text h1 {
+  .blog.box-1 .title-text p {
     font-size: 4em;
   }
 

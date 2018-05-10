@@ -60,7 +60,9 @@ $news = get_posts(
 					<h3 class="small-title"><?php echo $obj->post_title; ?></h3>
 				</div>
 				<div class="cols col-7 col-12-md">
-					<?php echo get_field('events-description', $obj->ID); ?>
+					<div class="events__description">
+						<?php echo get_field('events-description', $obj->ID); ?>
+					</div>					
 					<a class="events__btn" href="<?php echo get_field('events-link', $obj->ID); ?>">Подробнее...</a>
 				</div>
 			</figure>
