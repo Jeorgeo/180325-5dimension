@@ -1061,7 +1061,8 @@ label.cloud-form__сonsent {
   margin: 0;
 }
 
-.blog.box-1 .title-text p {
+.blog.box-1 .title-text p,
+.blog.box-1 .title-text h1{
   color: #ffffff;
   font-size: 2em;
 }
@@ -1511,7 +1512,8 @@ label.cloud-form__сonsent {
     ## blog
   --------------------------------------------------------------*/
 
-  .blog.box-1 .title-text p {
+  .blog.box-1 .title-text p,
+  .blog.box-1 .title-text h1 {
     font-family: 'PFSquareSansPro-Bold', 'Arial', serif;
     font-size: 3em;
   }

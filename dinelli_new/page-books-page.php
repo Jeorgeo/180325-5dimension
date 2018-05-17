@@ -53,38 +53,43 @@ $news = get_posts(
 			<article class="cols col-3 col-md-6">
 				<?php
 					$blogLink = get_field('blog-link', $obj->ID);
+					$blogсLink = get_field('blog-clink', $obj->ID);
 
-					if ($blogLink) {
+					if ($blogсLink) {
 				?>
-				<a class="service__card" href="<?php echo get_field('blog-clink', $obj->ID); ?>">
+					<a class="service__card" href="<?php echo get_field('blog-сlink', $obj->ID); ?>">
+						<figure>
+							<img src="<?php echo get_field('blog-image',$obj->ID); ?>" alt="5Dimansion.ru <?php echo $obj->post_title; ?>">
+						</figure>
+						<h4 class="small-title"><?php echo $obj->post_title; ?></h4>
+						<?php echo get_field('blog-description', $obj->ID); ?>
+					</a>
 				<?php
-					} else {
+			} else if ($blogLink) {
 				?>
-				<a class="service__card" href="<?php echo $obj->post_name; ?>">
+					<a class="service__card" href="<?php echo get_field('blog-link', $obj->ID); ?>">
+						<figure>
+							<img src="<?php echo get_field('blog-image',$obj->ID); ?>" alt="5Dimansion.ru <?php echo $obj->post_title; ?>">
+						</figure>
+						<h4 class="small-title"><?php echo $obj->post_title; ?></h4>
+						<?php echo get_field('blog-description', $obj->ID); ?>
+						<a class="books__btn" href="<?php echo get_field('blog-link', $obj->ID); ?>">Скачать</a>
+					</a>
+				<?php
+			} else {
+				?>
+					<a class="service__card" href="<?php echo $obj->post_name; ?>">
+						<figure>
+							<img src="<?php echo get_field('blog-image',$obj->ID); ?>" alt="5Dimansion.ru <?php echo $obj->post_title; ?>">
+						</figure>
+						<h4 class="small-title"><?php echo $obj->post_title; ?></h4>
+						<?php echo get_field('blog-description', $obj->ID); ?>
+					</a>
 				<?php
 					}
 
 				?>
-					<figure>
-						<img src="<?php echo get_field('blog-image',$obj->ID); ?>" alt="">
-					</figure>
-					<h4 class="small-title"><?php echo $obj->post_title; ?></h4>
-					<?php echo get_field('blog-description', $obj->ID); ?>
-					<?php
-						$blogLink = get_field('blog-link', $obj->ID);
 
-						if ($blogLink) {
-							echo get_field('blog-link', $obj->ID);
-					?>
-
-					<?php
-						} else {
-					?>
-						<a class="books__btn" href="<?php echo $obj->post_name; ?>">Подробнее</a>
-					<?php
-						}
-					?>
-				</a>
 			</article>
 			<?php
 }
