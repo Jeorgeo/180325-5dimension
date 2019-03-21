@@ -1178,7 +1178,7 @@ label.cloud-form__сonsent {
   position: relative;
   display: block;
   width: 100%;
-  margin: 0 auto;
+  margin: 0;
   padding: 1em;
   text-align: center;
   text-transform: uppercase;
@@ -1358,7 +1358,7 @@ label.cloud-form__сonsent {
 .main.box-1 p {
   font-family: 'PFSquareSansPro-Regular', 'Arial', sans-serif;
   font-size: 1.4em;
-  line-height: 0.9em;
+  line-height: 1.2em;
   margin: 0.5em 0;
 }
 
@@ -1491,8 +1491,8 @@ label.cloud-form__сonsent {
   .sidebar-contacts li,
   .left-panel__primary-menu a,
   .sidebar-contacts a {
-  min-height: 40px;
-  line-height: 40px;
+  min-height: 33px;
+  line-height: 33px;
   }
 
   .main.box-1 {
@@ -1560,7 +1560,7 @@ label.cloud-form__сonsent {
 
   .events.box-1 {
     margin-bottom: 0;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(255, 255, 255, 0.3);
   }
 
   .events.box-1 h2 {
@@ -1596,11 +1596,16 @@ label.cloud-form__сonsent {
 
   .events__box-content .cols.col-12-md {
     display: flex;
+    justify-content: space-between;
     align-items: center;
   }
 
   .events__box-content .cols.col-12-md h3 {
     font-size: 1.4em;
+  }
+
+  .events__description {
+    width: 100%;
   }
 
   .events__description p {
@@ -1895,7 +1900,15 @@ label.cloud-form__сonsent {
   }
 
   .main.box-1 p {
-    font-size: 2em;
+    font-size: 2.5em;
+  }
+
+  .left-panel__primary-menu li,
+  .sidebar-contacts li,
+  .left-panel__primary-menu a,
+  .sidebar-contacts a {
+  min-height: 40px;
+  line-height: 40px;
   }
 
   /*--------------------------------------------------------------
