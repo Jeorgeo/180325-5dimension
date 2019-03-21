@@ -1823,8 +1823,8 @@ label.cloud-form__сonsent {
 
   .main.box-1 {
     min-height: 768px;
-    padding: 280px 0 1em 50%;
-    background-size: cover;
+    padding: 240px 0 1em 50%;
+    background-size: contain;
   }
 
   .main.box-1 h1 {
@@ -1885,13 +1885,12 @@ label.cloud-form__сonsent {
     width: 100%;
   }
 
-
 }
 
 @media screen and (min-width: 1600px) {
   .main.box-1 {
     min-height: 900px;
-    padding: 400px 0 1em 50%;
+    padding: 360px 0 1em 50%;
     background-size: contain;
   }
 
